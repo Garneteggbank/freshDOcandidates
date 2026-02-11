@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>Garnet Candidate Dossier - 26122001</title>
+    <title>Garnet Candidate Dossier - ID 26122001</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
-        function dossierData() {
+        window.dossierData = function() {
             return {
                 lang: 'ru',
                 data: {
                     age: 24
                 },
-                // Пути к фото в вашем репозитории GitHub
+                // Прямые пути к фото в вашем репозитории GitHub
                 photos: {
                     main: "photos/ID26122001/6.jpg",
                     full: "photos/ID26122001/3.jpg",
@@ -39,16 +39,14 @@
                             skin: "Светлая, ровный тон, без веснушек и пигментации",
                             body: "Атлетическое, тип фигуры близок к «песочным часам»",
                             edu1: "Магистр (в процессе) - Правоохранительная деятельность",
-                            school1: "Международный Гуманитарный Университет (2024–2026)",
                             edu2: "Бакалавр - Физическая культура и спорт",
-                            school2: "Сумской Государственный Университет (2019–2023)",
                             sports: "Легкая атлетика 12 лет — спортивная ходьба, прыжки в длину",
                             vision: "Отличное зрение / Правильный прикус",
                             multiples: "Случаи многоплодной беременности в роду (2+ ребенка)",
                             donor: "Первичное донорство",
                             longevity: "По отцовской линии до 75 лет; бабушка по материнской линии жива. Все члены семьи здоровы и обладают отличным зрением.",
                             character: "Волевой спортивный характер, исключительная дисциплинированность и стремление к результату.",
-                            familyStory: "Мои родители — пример высокого профессионализма. Отец получил инженерное образование, а мать посвятила себя ветеринарной медицине. Воспитание в такой интеллектуальной среде научило меня ответственности, дисциплине и глубокому пониманию ценности знаний.",
+                            familyStory: "Мои родители — пример профессионализма. Отец получил инженерное образование, а мать посвятила себя ветеринарной медицине. Воспитание в такой интеллектуальной среде научило меня дисциплине, ответственности и глубокому пониманию ценности знаний.",
                             fatherInfo: "Инженер",
                             motherInfo: "Ветеринарный специалист",
                             hobbies: "Путешествия, хайкинг в горах и увлечение гольфом. Движение — это жизнь.",
@@ -61,26 +59,24 @@
                         ageSuffix: "y.o.",
                         nationality: "Ukrainian",
                         stats: { height: "Height", weight: "Weight", blood: "Blood Type", eyes: "Eyes" },
-                        headers: { tech: "Technical Profile", appearance: "Physical Data", education: "Education & Achievements", genetics: "Genetic Map", interview: "Personality & Interview" },
+                        headers: { tech: "Technical Profile", appearance: "Anthropometric Data", education: "Education & Achievements", genetics: "Genetic Map", interview: "Personality & Interview" },
                         fields: { eyes: "Eyes", hair: "Hair", skin: "Skin", body: "Body Type", health: "Health", multiples: "Multiples", status: "Status", genHeredity: "Genetic Heredity", father: "FATHER", mother: "MOTHER", charHeader: "Character", famHeader: "Family History", lifeHeader: "Lifestyle", sportLabel: "Sports Achievements" },
                         verified: "Identity Verified",
                         data: {
-                            eyeColorShort: "Dark Green",
+                            eyeColorShort: "Green",
                             eyes: "Dark green with hazel tint inside, almond-shaped",
                             hair: "Brown, long, with light curls; density (circumference) – 9 cm",
                             skin: "Fair, even tone, no freckles or pigmentation",
                             body: "Athletic, close to an 'hourglass' shape",
                             edu1: "Master's (In progress) - Law Enforcement",
-                            school1: "International Humanitarian University (2024–2026)",
                             edu2: "Bachelor's - Physical Culture and Sports",
-                            school2: "Sumy State University (2019–2023)",
                             sports: "Track and Field 12 years — Race walking, long jump",
                             vision: "Excellent vision / Correct dental occlusion",
-                            multiples: "History of multiples in family (2+ children)",
+                            multiples: "History of twins/multiples in family (2+ children)",
                             donor: "First-time donor",
                             longevity: "Paternal line up to 75 years; Maternal grandmother is alive. Family members are healthy with excellent vision.",
                             character: "Strong-willed athletic character, exceptional discipline, and goal-oriented.",
-                            familyStory: "My parents are examples of high professionalism. My father holds an engineering degree, and my mother dedicated her career to veterinary medicine. Growing up in such an intellectual environment taught me responsibility, discipline, and a deep appreciation for the value of knowledge.",
+                            familyStory: "My parents are examples of high professionalism. My father holds an engineering degree, and my mother dedicated her career to veterinary medicine. Growing up in such an intellectual environment taught me discipline, responsibility, and a deep appreciation for the value of knowledge.",
                             fatherInfo: "Engineer",
                             motherInfo: "Veterinary Specialist",
                             hobbies: "Traveling, mountain hiking, and golf. Movement is life.",
@@ -105,6 +101,8 @@
         }
         img { background-color: #e5e7eb; object-fit: cover; }
     </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
 </head>
 <body class="antialiased" x-data="dossierData()" x-cloak>
 
@@ -193,11 +191,11 @@
                     <div class="space-y-4 text-sm">
                         <div class="p-6 bg-blue-50/40 rounded-3xl border border-blue-100">
                             <p class="font-bold text-slate-800" x-text="t().data.edu1"></p>
-                            <p class="text-xs text-slate-500 mt-1" x-text="t().data.school1"></p>
+                            <p class="text-xs text-slate-500" x-text="t().data.school1"></p>
                         </div>
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
                             <p class="font-bold text-slate-800" x-text="t().data.edu2"></p>
-                            <p class="text-xs text-slate-500 mt-1" x-text="t().data.school2"></p>
+                            <p class="text-xs text-slate-500" x-text="t().data.school2"></p>
                         </div>
                         <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm flex justify-between items-center">
                             <div>
@@ -258,8 +256,8 @@
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         <span x-text="t().fields.famHeader"></span>
                     </h4>
-                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 shadow-inner">
-                        <p class="text-slate-600 text-base leading-relaxed italic font-light mb-8" x-text="'&quot;' + t().data.familyStory + '&quot;'"></p>
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 space-y-8 shadow-inner">
+                        <p class="text-slate-600 text-base leading-relaxed italic font-light" x-text="'&quot;' + t().data.familyStory + '&quot;'"></p>
                         <div class="pt-8 border-t border-slate-200 grid grid-cols-2 gap-10">
                             <div>
                                 <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.father"></p>
@@ -274,20 +272,23 @@
                 </div>
 
                 <div class="grid grid-cols-12 gap-10 items-end">
-                    <div class="col-span-7 space-y-8">
+                    <div class="col-span-7 space-y-12">
                         <div>
-                            <h4 class="text-[10px] font-black text-blue-600 uppercase tracking-[0.4em] mb-3" x-text="t().fields.lifeHeader"></h4>
-                            <p class="text-slate-600 text-base font-light" x-text="t().data.hobbies"></p>
+                            <h4 class="text-[10px] font-black text-blue-600 uppercase tracking-[0.4em] mb-5" x-text="t().fields.lifeHeader"></h4>
+                            <p class="text-slate-600 text-base font-light leading-relaxed" x-text="t().data.hobbies"></p>
                         </div>
-                        <div class="p-8 bg-blue-600 text-white rounded-[2.5rem] shadow-2xl transform -rotate-1">
-                            <p class="text-base font-light italic" x-text="'«' + t().data.statement + '»'"></p>
+                        <div class="p-10 bg-blue-600 text-white rounded-[2.5rem] shadow-2xl shadow-blue-100 transform -rotate-1">
+                            <h4 class="text-[10px] font-black text-blue-200 uppercase mb-5 italic tracking-[0.4em]">Official Statement</h4>
+                            <p class="text-base font-light italic leading-relaxed" x-text="'«' + t().data.statement + '»'"></p>
                         </div>
                     </div>
-                    <div class="col-span-5 aspect-[4/5] bg-white rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl rotate-2">
-                        <img :src="photos.lifestyle" class="w-full h-full">
+                    
+                    <div class="col-span-5 aspect-[4/5] bg-white rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-all duration-1000 cursor-zoom-in">
+                        <img :src="photos.lifestyle" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
+
             <div class="mt-auto pt-14 flex justify-between items-center border-t border-slate-100 text-[9px] font-black text-slate-400 uppercase tracking-[0.6em]">
                 <span>Dossier Ver. 3.5 / 2026</span>
                 <span x-text="t().verified"></span>
