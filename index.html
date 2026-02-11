@@ -31,7 +31,8 @@
                         confidential: "Конфиденциально",
                         data: {
                             hair1: "Коричневые", eyes1: "Зеленые",
-                            hair2: "Русые", eyes2: "Каре-зеленые"
+                            hair2: "Русые", eyes2: "Каре-зеленые",
+                            hair3: "Блонд", eyes3: "Серо-зеленые"
                         }
                     },
                     uk: {
@@ -51,7 +52,8 @@
                         confidential: "Конфіденційно",
                         data: {
                             hair1: "Коричневе", eyes1: "Зелені",
-                            hair2: "Русяве", eyes2: "Каро-зелені"
+                            hair2: "Русяве", eyes2: "Каро-зелені",
+                            hair3: "Блонд", eyes3: "Сіро-зелені"
                         }
                     },
                     en: {
@@ -71,7 +73,8 @@
                         confidential: "Confidential",
                         data: {
                             hair1: "Brown", eyes1: "Green",
-                            hair2: "Light Brown", eyes2: "Hazel-green"
+                            hair2: "Light Brown", eyes2: "Hazel-green",
+                            hair3: "Blonde", eyes3: "Gray-green"
                         }
                     },
                     cn: {
@@ -91,7 +94,8 @@
                         confidential: "機密內容",
                         data: {
                             hair1: "棕色", eyes1: "綠色",
-                            hair2: "淺棕色", eyes2: "棕綠色"
+                            hair2: "淺棕色", eyes2: "棕綠色",
+                            hair3: "金髮", eyes3: "灰綠色"
                         }
                     }
                 },
@@ -122,7 +126,7 @@
                 </div>
             </div>
 
-            <!-- Language Switcher In Header -->
+            <!-- Language Switcher -->
             <div class="flex gap-1 p-1 bg-slate-100 rounded-full border border-slate-200">
                 <template x-for="l in ['ru', 'uk', 'en', 'cn']">
                     <button @click="lang = l" 
@@ -148,16 +152,13 @@
         <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- CANDIDATE 1: ID 26122001 -->
+            <!-- КАНДИДАТ 1: ID 26122001 -->
             <a href="ID26122001.html" class="card-hover group block">
                 <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
-                    <!-- Photo Container -->
                     <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
                         <img src="photos/ID26122001/8.jpg" alt="ID 26122001" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
                     </div>
-                    
-                    <!-- Content -->
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="mb-6">
                             <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 26122001</h3>
@@ -165,8 +166,6 @@
                                 <span x-text="t().nationality"></span>, 24 <span x-text="t().ageSuffix"></span>
                             </p>
                         </div>
-
-                        <!-- Stats Table -->
                         <div class="space-y-3 mb-6">
                             <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
                                 <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
@@ -185,8 +184,6 @@
                                 <span class="text-slate-900 font-bold" x-text="t().data.eyes1"></span>
                             </div>
                         </div>
-
-                        <!-- Action -->
                         <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
                             <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
                             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -195,16 +192,13 @@
                 </div>
             </a>
 
-            <!-- CANDIDATE 2: ID 25071999 -->
+            <!-- КАНДИДАТ 2: ID 25071999 -->
             <a href="ID25071999.html" class="card-hover group block">
                 <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
-                    <!-- Photo Container -->
                     <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
-                        <img src="photos/ID25071999/8.JPG" alt="ID 25071999" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="photos/ID25071999/9.jpg" alt="ID 25071999" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
                     </div>
-                    
-                    <!-- Content -->
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="mb-6">
                             <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 25071999</h3>
@@ -212,8 +206,6 @@
                                 <span x-text="t().nationality"></span>, 26 <span x-text="t().ageSuffixAlt"></span>
                             </p>
                         </div>
-
-                        <!-- Stats Table -->
                         <div class="space-y-3 mb-6">
                             <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
                                 <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
@@ -221,7 +213,7 @@
                             </div>
                             <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
                                 <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.blood"></span>
-                                <span class="text-slate-900 font-bold text-blue-600">IV (AB)+</span>
+                                <span class="text-slate-900 font-bold text-blue-600">III (AB)+</span>
                             </div>
                             <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
                                 <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.hair"></span>
@@ -232,8 +224,6 @@
                                 <span class="text-slate-900 font-bold" x-text="t().data.eyes2"></span>
                             </div>
                         </div>
-
-                        <!-- Action -->
                         <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
                             <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
                             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -242,7 +232,47 @@
                 </div>
             </a>
 
-            <!-- Placeholder for new dossiers -->
+            <!-- КАНДИДАТ 3: ID 31031999 -->
+            <a href="ID31031999.html" class="card-hover group block">
+                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
+                    <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
+                        <img src="photos/ID31031999/8.jpg" alt="ID 31031999" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 31031999</h3>
+                            <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
+                                <span x-text="t().nationality"></span>, 27 <span x-text="t().ageSuffixAlt"></span>
+                            </p>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
+                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
+                                <span class="text-slate-900 font-bold">170 см</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
+                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.blood"></span>
+                                <span class="text-slate-900 font-bold text-blue-600">I (A) Rh+</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
+                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.hair"></span>
+                                <span class="text-slate-900 font-bold" x-text="t().data.hair3"></span>
+                            </div>
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.eyes"></span>
+                                <span class="text-slate-900 font-bold" x-text="t().data.eyes3"></span>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
+                            <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Placeholder for next dossiers -->
             <div class="border-2 border-dashed border-slate-200 rounded-[2.5rem] flex flex-col items-center justify-center p-12 text-center opacity-50">
                 <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
                     <svg class="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
