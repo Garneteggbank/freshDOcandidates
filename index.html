@@ -21,57 +21,57 @@
                         subHeader: "Нажмите на карточку для просмотра полного досье",
                         nationality: "Украинка",
                         ageSuffix: "лет", ageSuffix2: "года",
-                        stats: { h: "Рост", eyes: "Глаза" },
+                        stats: { h: "Рост", b: "Группа крови", eyes: "Глаза" },
                         data: {
-                            id2612: { eyes: "Зеленые" },
-                            id2507: { eyes: "Каре-зеленые" },
-                            id3103: { eyes: "Серо-зеленые" },
-                            id2401: { eyes: "Зелено-карие" }
+                            id2612: { eyes: "Зеленые", blood: "III (B) Rh+" },
+                            id2507: { eyes: "Каре-зеленые", blood: "III (AB) Rh+" },
+                            id3103: { eyes: "Серо-зеленые", blood: "I (A) Rh+" },
+                            id2401: { eyes: "Зелено-карие", blood: "I (O) Rh+" }
                         }
                     },
                     uk: {
                         agency: "Garnet International",
                         catalogTitle: "База Кандидатів",
                         activeHeader: "Активні анкети",
-                        subHeader: "Натисніть на картку для перегляду досьє",
+                        subHeader: "Натисніть на картку для перегляду повного досьє",
                         nationality: "Українка",
                         ageSuffix: "років", ageSuffix2: "роки",
-                        stats: { h: "Зріст", eyes: "Очі" },
+                        stats: { h: "Зріст", b: "Група крові", eyes: "Очі" },
                         data: {
-                            id2612: { eyes: "Зелені" },
-                            id2507: { eyes: "Каро-зелені" },
-                            id3103: { eyes: "Сіро-зелені" },
-                            id2401: { eyes: "Зелено-карі" }
+                            id2612: { eyes: "Зелені", blood: "III (B) Rh+" },
+                            id2507: { eyes: "Каро-зелені", blood: "III (AB) Rh+" },
+                            id3103: { eyes: "Сіро-зелені", blood: "I (A) Rh+" },
+                            id2401: { eyes: "Зелено-карі", blood: "I (O) Rh+" }
                         }
                     },
                     en: {
                         agency: "Garnet International",
                         catalogTitle: "Candidate Base",
-                        activeHeader: "Active Dossiers",
-                        subHeader: "Click a card to view the profile",
+                        activeHeader: "Available Dossiers",
+                        subHeader: "Click on a card to view the full profile",
                         nationality: "Ukrainian",
                         ageSuffix: "y.o.", ageSuffix2: "y.o.",
-                        stats: { h: "Height", eyes: "Eyes" },
+                        stats: { h: "Height", b: "Blood Type", eyes: "Eyes" },
                         data: {
-                            id2612: { eyes: "Green" },
-                            id2507: { eyes: "Hazel-green" },
-                            id3103: { eyes: "Gray-green" },
-                            id2401: { eyes: "Green-brown" }
+                            id2612: { eyes: "Green", blood: "III (B) Rh+" },
+                            id2507: { eyes: "Hazel-green", blood: "III (AB) Rh+" },
+                            id3103: { eyes: "Gray-green", blood: "I (A) Rh+" },
+                            id2401: { eyes: "Green-brown", blood: "I (O) Rh+" }
                         }
                     },
                     cn: {
                         agency: "Garnet International",
                         catalogTitle: "候選人資料庫",
                         activeHeader: "可用檔案",
-                        subHeader: "點擊卡片查看詳細資料",
+                        subHeader: "點擊卡片查看完整的機密個人資料",
                         nationality: "烏克蘭",
                         ageSuffix: "歲", ageSuffix2: "歲",
-                        stats: { h: "身高", eyes: "瞳色" },
+                        stats: { h: "身高", b: "血型", eyes: "瞳色" },
                         data: {
-                            id2612: { eyes: "綠色" },
-                            id2507: { eyes: "淺棕色" },
-                            id3103: { eyes: "灰綠色" },
-                            id2401: { eyes: "綠棕色" }
+                            id2612: { eyes: "綠色", blood: "III (B) Rh+" },
+                            id2507: { eyes: "淺棕色", blood: "III (AB) Rh+" },
+                            id3103: { eyes: "灰綠色", blood: "I (A) Rh+" },
+                            id2401: { eyes: "綠棕色", blood: "I (O) Rh+" }
                         }
                     }
                 },
@@ -82,22 +82,22 @@
 
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
-        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
-        .card-hover:hover { transform: translateY(-8px); transition: all 0.3s ease; }
+        .card-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05); }
+        .card-hover:hover { transform: translateY(-8px); transition: all 0.4s ease; }
         [x-cloak] { display: none !important; }
     </style>
 </head>
 <body class="antialiased" x-data="catalogData()" x-cloak>
 
     <!-- Header -->
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 </div>
                 <div>
-                    <p class="text-[9px] font-black text-blue-600 uppercase tracking-widest leading-none" x-text="t().agency"></p>
+                    <p class="text-[9px] font-black text-blue-600 uppercase tracking-[0.3em] leading-none" x-text="t().agency"></p>
                     <h1 class="text-xl font-bold tracking-tight text-slate-900" x-text="t().catalogTitle"></h1>
                 </div>
             </div>
@@ -125,53 +125,97 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- CANDIDATE 1 -->
-            <a href="ID26122001.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow flex flex-col">
-                <div class="aspect-[4/5] overflow-hidden bg-slate-100"><img src="photos/ID26122001/8.jpg" class="w-full h-full object-cover"></div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase">ID: 26122001</h3>
-                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4"><span x-text="t().nationality"></span>, 24 <span x-text="t().ageSuffix2"></span></p>
+            <a href="ID26122001.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow h-full flex flex-col">
+                <div class="aspect-[4/5] overflow-hidden bg-slate-100">
+                    <img src="photos/ID26122001/8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase leading-none">ID: 26122001</h3>
+                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4">
+                        <span x-text="t().nationality"></span>, 24 <span x-text="t().ageSuffix2"></span>
+                    </p>
                     <div class="space-y-2 text-[10px] uppercase font-bold text-slate-400">
-                        <div class="flex justify-between border-b border-slate-50 pb-1"><span x-text="t().stats.h"></span> <span class="text-slate-900">181 см</span></div>
-                        <div class="flex justify-between"><span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id2612.eyes"></span></div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1">
+                            <span x-text="t().stats.h"></span> <span class="text-slate-900">181 см</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1 text-blue-600">
+                            <span x-text="t().stats.b"></span> <span class="font-black" x-text="t().data.id2612.blood"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id2612.eyes"></span>
+                        </div>
                     </div>
                 </div>
             </a>
 
             <!-- CANDIDATE 2 -->
-            <a href="ID25071999.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow flex flex-col">
-                <div class="aspect-[4/5] overflow-hidden bg-slate-100"><img src="photos/ID25071999/9.jpg" class="w-full h-full object-cover"></div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase">ID: 25071999</h3>
-                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4"><span x-text="t().nationality"></span>, 26 <span x-text="t().ageSuffix"></span></p>
+            <a href="ID25071999.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow h-full flex flex-col">
+                <div class="aspect-[4/5] overflow-hidden bg-slate-100">
+                    <img src="photos/ID25071999/9.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase leading-none">ID: 25071999</h3>
+                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4">
+                        <span x-text="t().nationality"></span>, 26 <span x-text="t().ageSuffix"></span>
+                    </p>
                     <div class="space-y-2 text-[10px] uppercase font-bold text-slate-400">
-                        <div class="flex justify-between border-b border-slate-50 pb-1"><span x-text="t().stats.h"></span> <span class="text-slate-900">169 см</span></div>
-                        <div class="flex justify-between"><span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id2507.eyes"></span></div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1">
+                            <span x-text="t().stats.h"></span> <span class="text-slate-900">169 см</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1 text-blue-600">
+                            <span x-text="t().stats.b"></span> <span class="font-black" x-text="t().data.id2507.blood"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id2507.eyes"></span>
+                        </div>
                     </div>
                 </div>
             </a>
 
             <!-- CANDIDATE 3 -->
-            <a href="ID31031999.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow flex flex-col">
-                <div class="aspect-[4/5] overflow-hidden bg-slate-100"><img src="photos/ID31031999/8.jpg" class="w-full h-full object-cover"></div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase">ID: 31031999</h3>
-                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4"><span x-text="t().nationality"></span>, 27 <span x-text="t().ageSuffix"></span></p>
+            <a href="ID31031999.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow h-full flex flex-col">
+                <div class="aspect-[4/5] overflow-hidden bg-slate-100">
+                    <img src="photos/ID31031999/8.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase leading-none">ID: 31031999</h3>
+                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4">
+                        <span x-text="t().nationality"></span>, 27 <span x-text="t().ageSuffix"></span>
+                    </p>
                     <div class="space-y-2 text-[10px] uppercase font-bold text-slate-400">
-                        <div class="flex justify-between border-b border-slate-50 pb-1"><span x-text="t().stats.h"></span> <span class="text-slate-900">170 см</span></div>
-                        <div class="flex justify-between"><span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id3103.eyes"></span></div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1">
+                            <span x-text="t().stats.h"></span> <span class="text-slate-900">170 см</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1 text-blue-600">
+                            <span x-text="t().stats.b"></span> <span class="font-black" x-text="t().data.id3103.blood"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id3103.eyes"></span>
+                        </div>
                     </div>
                 </div>
             </a>
 
             <!-- CANDIDATE 4 -->
-            <a href="ID24012001.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow flex flex-col">
-                <div class="aspect-[4/5] overflow-hidden bg-slate-100"><img src="photos/ID24012001/6.jpg" class="w-full h-full object-cover"></div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase">ID: 24012001</h3>
-                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4"><span x-text="t().nationality"></span>, 25 <span x-text="t().ageSuffix"></span></p>
+            <a href="ID24012001.html" class="card-hover group block bg-white rounded-[2rem] overflow-hidden border border-slate-200 card-shadow h-full flex flex-col">
+                <div class="aspect-[4/5] overflow-hidden bg-slate-100">
+                    <img src="photos/ID24012001/6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-black text-slate-900 mb-1 tracking-tighter uppercase leading-none">ID: 24012001</h3>
+                    <p class="text-blue-600 text-[9px] font-bold uppercase tracking-widest mb-4">
+                        <span x-text="t().nationality"></span>, 25 <span x-text="t().ageSuffix"></span>
+                    </p>
                     <div class="space-y-2 text-[10px] uppercase font-bold text-slate-400">
-                        <div class="flex justify-between border-b border-slate-50 pb-1"><span x-text="t().stats.h"></span> <span class="text-slate-900">170 см</span></div>
-                        <div class="flex justify-between"><span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id2401.eyes"></span></div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1">
+                            <span x-text="t().stats.h"></span> <span class="text-slate-900">170 см</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-50 pb-1 text-blue-600">
+                            <span x-text="t().stats.b"></span> <span class="font-black" x-text="t().data.id2401.blood"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span x-text="t().stats.eyes"></span> <span class="text-slate-900" x-text="t().data.id2401.eyes"></span>
+                        </div>
                     </div>
                 </div>
             </a>
@@ -181,7 +225,10 @@
 
     <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-200 mt-20 flex justify-between items-center text-slate-400 text-[10px] font-black uppercase tracking-widest">
         <span>© 2026 Garnet International</span>
-        <span>Verified Database</span>
+        <div class="flex gap-6">
+            <span>Verified Database</span>
+            <span>Confidential</span>
+        </div>
     </footer>
 
 </body>
