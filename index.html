@@ -20,66 +20,65 @@
                     athletic: "photos/ID24012001/3.jpg",  
                     lifestyle: "photos/ID24012001/1.jpg" 
                 },
-                getImg(path) { return path; },
                 translations: {
                     ru: {
-                        back: "Каталог", agency: "Garnet International Agency", dossier: "Конфиденциальное досье", ageSuffix: "лет", nationality: "Украинка",
+                        back: "Каталог", agency: "Garnet Agency", dossier: "Досье кандидата", ageSuffix: "лет", nationality: "Украинка",
                         stats: { height: "Рост", weight: "Вес", blood: "Группа крови", eyes: "Глаза" },
-                        headers: { tech: "Технический Профиль", appearance: "Антропометрические данные", education: "Образование и Достижения", genetics: "Генетическая Карта", interview: "Личные Качества" },
-                        fields: { eyes: "Глаза", hair: "Волосы", skin: "Кожа", body: "Телосложение", health: "Здоровье", multiples: "Дети", status: "Статус", genHeredity: "Генетическая Наследственность", father: "ОТЕЦ", mother: "МАТЬ", charHeader: "Характер", famHeader: "История Рода", lifeHeader: "Стиль Жизни", sportLabel: "Опыт в программе" },
-                        verified: "Личность подтверждена",
+                        headers: { tech: "Технический Профиль", appearance: "Данные", education: "Образование", genetics: "Генетика", interview: "Качества" },
+                        fields: { eyes: "Глаза", hair: "Волосы", skin: "Кожа", body: "Фигура", health: "Здоровье", multiples: "Дети", status: "Статус", genHeredity: "Наследственность", sportLabel: "Опыт" },
+                        verified: "Подтверждено",
                         data: {
-                            eyeColorShort: "Зелено-карие", eyes: "Зелено-карие, теплый и глубокий оттенок", hair: "Русые, прямые, ухоженные", skin: "Светлая, фарфоровая", body: "Стройное (рост 170 см, вес 50 кг)",
-                            edu1: "Среднеспециальное образование", school1: "Винницкий колледж искусств", sports: "Успешный донор (31 клетка М2), АМГ 10.1",
-                            vision: "100%", multiples: "Своих детей нет", donor: "Повторное донорство", longevity: "Наследственное долголетие.",
-                            character: "Творческая натура, спокойная и уравновешенная.", familyStory: "Я выросла в гармоничной атмосфере. Мой отец — архитектор, мама — в администрации.",
-                            fatherInfo: "Архитектор", motherInfo: "Администратор", hobbies: "Живопись, рисование.", statement: "Я верю, что моя творческая энергия поможет создать новую жизнь."
+                            eyeColorShort: "Зелено-карие", eyes: "Зелено-карие, глубокие", hair: "Русые, прямые", skin: "Светлая, нежная", body: "Стройное (170см, 50кг)",
+                            edu1: "Среднеспециальное", school1: "Колледж искусств", sports: "31 клетка М2, АМГ 10.1",
+                            vision: "100%", multiples: "Детей нет", donor: "Повторно", longevity: "Долголетие.",
+                            character: "Творческая натура, спокойная.", familyStory: "Отец архитектор, мама администратор.",
+                            hobbies: "Живопись.", statement: "Верю в созидательную энергию."
                         }
                     },
                     en: {
-                        back: "Catalog", agency: "Garnet International Agency", dossier: "Confidential Dossier", ageSuffix: "y.o.", nationality: "Ukrainian",
+                        back: "Catalog", agency: "Garnet Agency", dossier: "Candidate Dossier", ageSuffix: "y.o.", nationality: "Ukrainian",
                         stats: { height: "Height", weight: "Weight", blood: "Blood", eyes: "Eyes" },
-                        headers: { tech: "Technical Profile", appearance: "Physical Data", education: "Education", genetics: "Genetic Map", interview: "Personality" },
-                        fields: { eyes: "Eyes", hair: "Hair", skin: "Skin", body: "Body", health: "Health", multiples: "Children", status: "Status", genHeredity: "Genetic", father: "FATHER", mother: "MOTHER", charHeader: "Character", famHeader: "History", lifeHeader: "Lifestyle", sportLabel: "Experience" },
+                        headers: { tech: "Technical Profile", appearance: "Data", education: "Education", genetics: "Genetics", interview: "Personality" },
+                        fields: { eyes: "Eyes", hair: "Hair", skin: "Skin", body: "Body", health: "Health", multiples: "Children", status: "Status", genHeredity: "Heredity", sportLabel: "Experience" },
                         verified: "Verified",
                         data: {
                             eyeColorShort: "Green-brown", eyes: "Green-brown", hair: "Light brown", skin: "Fair", body: "Slender (170cm, 50kg)",
                             edu1: "Specialized Education", school1: "Arts College", sports: "31 M2 cells, AMH 10.1",
-                            vision: "100%", multiples: "No children", donor: "Repeat Donor", longevity: "Hereditary longevity.",
-                            character: "Creative and calm.", familyStory: "Father is an architect, mother in administration.",
-                            fatherInfo: "Architect", motherInfo: "Admin", hobbies: "Painting.", statement: "Creative energy for new life."
+                            vision: "100%", multiples: "No children", donor: "Repeat", longevity: "Longevity.",
+                            character: "Creative, calm.", familyStory: "Father architect, mother admin.",
+                            hobbies: "Painting.", statement: "Creative energy for life."
                         }
                     },
                     uk: {
-                        back: "Каталог", agency: "Garnet International Agency", dossier: "Конфіденційне досьє", ageSuffix: "років", nationality: "Українка",
+                        back: "Каталог", agency: "Garnet Agency", dossier: "Досьє кандидата", ageSuffix: "років", nationality: "Українка",
                         stats: { height: "Зріст", weight: "Вага", blood: "Група крові", eyes: "Очі" },
-                        headers: { tech: "Технічний Профіль", appearance: "Антропометричні дані", education: "Освіта", genetics: "Генетична Карта", interview: "Особисті Якості" },
-                        fields: { eyes: "Очі", hair: "Волосся", skin: "Шкіра", body: "Статура", health: "Здоров’я", multiples: "Діти", status: "Статус", genHeredity: "Генетична", father: "БАТЬКО", mother: "МАТИ", charHeader: "Характер", famHeader: "Історія Роду", lifeHeader: "Спосіб Життя", sportLabel: "Досвід" },
-                        verified: "Особу підтверджено",
+                        headers: { tech: "Технічний Профіль", appearance: "Дані", education: "Освіта", genetics: "Генетика", interview: "Якості" },
+                        fields: { eyes: "Очі", hair: "Волосся", skin: "Шкіра", body: "Статура", health: "Здоров’я", multiples: "Діти", status: "Статус", genHeredity: "Спадковість", sportLabel: "Досвід" },
+                        verified: "Підтверджено",
                         data: {
-                            eyeColorShort: "Зелено-карі", eyes: "Зелено-карі", hair: "Русяве", skin: "Світла", body: "Струнка (170 см, 50 кг)",
-                            edu1: "Середня спеціальна освіта", school1: "Коледж мистецтв", sports: "31 клітина М2, АМГ 10.1",
-                            vision: "100%", multiples: "Дітей немає", donor: "Повторне донорство", longevity: "Спадкове довголіття.",
-                            character: "Творча натура, спокійна.", familyStory: "Батько — архітектор, мати — адміністратор.",
-                            fatherInfo: "Архітектор", motherInfo: "Адміністратор", hobbies: "Живопис.", statement: "Творча енергія для нового життя."
+                            eyeColorShort: "Зелено-карі", eyes: "Зелено-карі, виразні", hair: "Русяве, пряме", skin: "Світла", body: "Струнка (170см, 50кг)",
+                            edu1: "Середня спеціальна", school1: "Коледж мистецтв", sports: "31 клітина М2, АМГ 10.1",
+                            vision: "100%", multiples: "Дітей немає", donor: "Повторно", longevity: "Довголіття.",
+                            character: "Творча натура, спокійна.", familyStory: "Батько архітектор, мати адміністратор.",
+                            hobbies: "Живопис.", statement: "Вірю в творчу енергію."
                         }
                     },
                     cn: {
-                        back: "目錄", agency: "Garnet International Agency", dossier: "候选人绝密档案", ageSuffix: "岁", nationality: "乌克兰",
+                        back: "目錄", agency: "Garnet Agency", dossier: "候选人档案", ageSuffix: "岁", nationality: "乌克兰",
                         stats: { height: "身高", weight: "体重", blood: "血型", eyes: "瞳色" },
-                        headers: { tech: "技术档案", appearance: "体征数据", education: "教育", genetics: "基因图谱", interview: "素质" },
-                        fields: { eyes: "瞳色", hair: "发色", skin: "皮肤", body: "体型", health: "健康", multiples: "子女", status: "状态", genHeredity: "遗传", father: "父亲", mother: "母亲", charHeader: "性格", famHeader: "家族史", lifeHeader: "方式", sportLabel: "经验" },
-                        verified: "验证",
+                        headers: { tech: "技术档案", appearance: "体征数据", education: "教育", genetics: "基因", interview: "素质" },
+                        fields: { eyes: "瞳色", hair: "发色", skin: "皮肤", body: "体型", health: "健康", multiples: "子女", status: "状态", genHeredity: "遗传", sportLabel: "经验" },
+                        verified: "已验证",
                         data: {
                             eyeColorShort: "绿棕色", eyes: "绿棕色", hair: "浅棕色", skin: "白色", body: "苗条 (170cm, 50kg)",
-                            edu1: "专科教育", school1: "艺术学院", sports: "31个M2, AMH 10.1",
+                            edu1: "专科", school1: "艺术学院", sports: "31个M2, AMH 10.1",
                             vision: "100%", multiples: "无子女", donor: "多次", longevity: "长寿。",
-                            character: "富有创意。", familyStory: "父亲是建筑师，母亲是行政。",
-                            fatherInfo: "建筑师", motherInfo: "经理", hobbies: "绘画。", statement: "创意能量。"
+                            character: "富有创意。", familyStory: "父亲建筑师，母亲行政。",
+                            hobbies: "绘画。", statement: "创意能量。"
                         }
                     }
                 },
-                t() { return this.translations[this.lang] || this.translations['ru']; }
+                t() { return this.translations[this.lang]; }
             };
         }
     </script>
@@ -89,19 +88,19 @@
         .page-break { page-break-after: always; }
         @media (min-width: 768px) { .page-container { aspect-ratio: 1 / 1.414; } }
         [x-cloak] { display: none !important; }
-        @media print { .no-print { display: none !important; } body { background: white; } .shadow-2xl { box-shadow: none !important; } }
+        .btn-nav { @apply flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur border border-slate-200 shadow-lg rounded-full text-[10px] font-black uppercase transition-all hover:bg-slate-50 text-slate-600; }
         img { background-color: #e5e7eb; object-fit: cover; image-rendering: -webkit-optimize-contrast; }
     </style>
 </head>
 <body class="antialiased" x-data="dossierData()" x-cloak>
 
-    <!-- НАВИГАЦИОННАЯ ПАНЕЛЬ С КНОПКОЙ НАЗАД -->
-    <div class="fixed top-4 left-4 right-4 z-50 flex justify-between items-center no-print sm:top-6 sm:left-6 sm:right-6">
-        <a href="index.html" class="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur border border-slate-200 shadow-lg rounded-full text-[10px] font-black uppercase text-slate-600 transition-all hover:bg-slate-50 active:scale-95">
+    <!-- Navigation Fixed Panel -->
+    <div class="fixed top-4 left-4 right-4 z-50 flex justify-between items-center no-print sm:top-6 sm:left-6 sm:right-6 pointer-events-none">
+        <a href="index.html" class="btn-nav pointer-events-auto">
             <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path></svg>
             <span x-text="t().back"></span>
         </a>
-        <div class="flex gap-1 p-1 bg-white/90 backdrop-blur border border-slate-200 shadow-xl rounded-full">
+        <div class="flex gap-1 p-1 bg-white/90 backdrop-blur border border-slate-200 shadow-xl rounded-full pointer-events-auto">
             <template x-for="l in ['ru', 'en', 'uk', 'cn']">
                 <button @click="lang = l" class="px-3 py-1.5 rounded-full text-[9px] font-black uppercase transition-all"
                     :class="lang === l ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400 hover:text-blue-600'" x-text="l"></button>
@@ -109,86 +108,40 @@
         </div>
     </div>
 
-    <!-- КОНТЕЙНЕР АНКЕТЫ -->
+    <!-- Content start with top padding -->
     <div class="max-w-4xl mx-auto py-20 sm:py-28 px-4 space-y-12 sm:space-y-20">
-
-        <!-- PAGE 1: VISUAL PASSPORT -->
+        <!-- PAGE 1 -->
         <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] overflow-hidden flex flex-col p-6 sm:p-14 border border-slate-200 relative page-break">
-            <div class="flex flex-col sm:flex-row justify-between items-start mb-6 sm:mb-12 border-b pb-6 sm:pb-10 border-slate-100">
-                <div class="mb-4 sm:mb-0">
-                    <div class="flex items-center gap-2 mb-2 sm:mb-3">
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-6 border-b pb-6 border-slate-100">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
                         <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         <p class="text-blue-600 font-black tracking-widest text-[8px] sm:text-[10px] uppercase" x-text="t().agency"></p>
                     </div>
                     <h1 class="text-4xl sm:text-7xl font-extralight tracking-tighter text-slate-900 leading-none">ID: 24012001</h1>
                     <p class="text-slate-400 mt-2 uppercase tracking-widest text-[8px] sm:text-[10px] font-bold" x-text="t().dossier"></p>
                 </div>
-                <div class="flex-shrink-0 bg-slate-50 p-4 rounded-2xl border border-slate-100 min-w-[120px] text-left sm:text-right">
-                    <p class="text-2xl sm:text-4xl font-light text-slate-800"><span x-text="data.age"></span> <span x-text="t().ageSuffix"></span></p>
+                <div class="flex-shrink-0 bg-slate-50 p-4 rounded-2xl border border-slate-100 min-w-[120px] text-left sm:text-right mt-4 sm:mt-0">
+                    <p class="text-2xl sm:text-4xl font-light text-slate-800 whitespace-nowrap"><span x-text="data.age"></span> <span x-text="t().ageSuffix"></span></p>
                     <p class="text-slate-400 text-[8px] font-black uppercase tracking-widest mt-1" x-text="t().nationality"></p>
                 </div>
             </div>
-
             <div class="flex flex-col sm:grid sm:grid-cols-12 gap-4 sm:gap-8 flex-grow mb-6 sm:mb-12">
-                <div class="sm:col-span-8 aspect-[4/5] sm:h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
-                    <img :src="getImg(photos.main)" class="w-full h-full">
-                </div>
+                <div class="sm:col-span-8 aspect-[4/5] sm:h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 bg-slate-100"><img :src="photos.main" class="w-full h-full"></div>
                 <div class="sm:col-span-4 flex flex-row sm:flex-col gap-4 sm:gap-8">
-                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
-                        <img :src="getImg(photos.full)" class="w-full h-full">
-                    </div>
-                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
-                        <img :src="getImg(photos.athletic)" class="w-full h-full">
-                    </div>
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border bg-slate-100"><img :src="photos.full" class="w-full h-full"></div>
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border bg-slate-100"><img :src="photos.athletic" class="w-full h-full"></div>
                 </div>
             </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 sm:py-10 border-t border-slate-100 text-center">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 py-6 sm:py-10 border-t border-slate-100 text-center">
                 <template x-for="(label, key) in t().stats">
                     <div class="bg-slate-50/50 sm:bg-transparent p-2 rounded-xl">
                         <p class="text-[7px] sm:text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1" x-text="label"></p>
-                        <p class="text-sm sm:text-2xl font-light text-slate-800" x-text="key === 'height' ? '170 cm' : (key === 'weight' ? '50 kg' : (key === 'blood' ? 'I (O) Rh+' : t().data.eyeColorShort))"></p>
+                        <p class="text-sm sm:text-2xl font-light text-slate-800" x-text="key === 'height' ? '170 см' : (key === 'weight' ? '50 кг' : (key === 'blood' ? 'I+' : t().data.eyeColorShort))"></p>
                     </div>
                 </template>
             </div>
         </div>
-
-        <!-- PAGE 2: TECHNICAL -->
-        <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-16 flex flex-col border border-slate-200 page-break">
-            <h2 class="text-2xl sm:text-4xl font-extralight text-slate-800 mb-8 sm:mb-16 flex items-center gap-4 sm:gap-6">
-                <span class="w-10 h-10 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-base sm:text-xl font-bold shadow-xl rotate-3">02</span>
-                <span x-text="t().headers.tech"></span>
-            </h2>
-            <div class="space-y-8 sm:space-y-12 flex-grow">
-                <section>
-                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-blue-600 mb-4 sm:mb-6" x-text="t().headers.appearance"></h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
-                        <template x-for="f in ['eyes', 'hair', 'skin', 'body']">
-                            <div class="flex sm:contents border-b sm:border-none border-slate-50 last:border-none">
-                                <div class="w-1/3 sm:w-auto bg-slate-50/50 p-4 text-slate-400 text-[7px] sm:text-[9px] font-black uppercase flex items-center" x-text="t().fields[f]"></div>
-                                <div class="w-2/3 sm:w-auto bg-white p-4 text-xs font-medium" x-text="t().data[f]"></div>
-                            </div>
-                        </template>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-blue-600 mb-4 sm:mb-6" x-text="t().headers.education"></h3>
-                    <div class="p-4 sm:p-6 bg-blue-50/40 rounded-2xl border border-blue-100">
-                        <p class="font-bold text-slate-800" x-text="t().data.edu1"></p>
-                        <p class="text-[10px] sm:text-xs text-slate-500 mt-1" x-text="t().data.school1"></p>
-                    </div>
-                    <div class="mt-4 p-4 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase mb-1" x-text="t().fields.sportLabel"></p>
-                        <p class="font-bold text-slate-800" x-text="t().data.sports"></p>
-                    </div>
-                </section>
-            </div>
-            <div class="mt-auto flex justify-between items-center text-[7px] font-black text-slate-400 uppercase tracking-widest">
-                <span x-text="t().agency"></span>
-                <span x-text="t().verified"></span>
-            </div>
-        </div>
-
     </div>
 </body>
 </html>
