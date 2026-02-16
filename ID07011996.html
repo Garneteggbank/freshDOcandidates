@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Garnet Candidate Dossier - ID 07011996</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        function dossierData() {
+            return {
+                lang: 'ru',
+                data: {
+                    age: 27
+                },
+                // Пути к фото для ID 07011996
+                photos: {
+                    main: "photos/ID07011996/16.jpg",      
+                    full: "photos/ID07011996/23.jpg",      
+                    athletic: "photos/ID07011996/15.jpg",  
+                    lifestyle: "photos/ID07011996/17.jpg" 
+                },
+                getImg(path) {
+                    return path;
+                },
+                translations: {
+                    ru: {
+                        back: "Каталог",
+                        agency: "Garnet International Agency",
+                        dossier: "Конфиденциальное досье кандидата",
+                        ageSuffix: "лет",
+                        nationality: "Украинка",
+                        stats: { height: "Рост", weight: "Вес", blood: "Группа крови", eyes: "Глаза" },
+                        headers: { tech: "Технический Профиль", appearance: "Антропометрические данные", education: "Образование и Достижения", genetics: "Генетическая Карта", interview: "Личные Качества и Интервью" },
+                        fields: { eyes: "Глаза", hair: "Волосы", skin: "Кожа", body: "Телосложение", health: "Здоровье", multiples: "Дети", status: "Статус", genHeredity: "Генетическая Наследственность", father: "ОТЕЦ", mother: "МАТЬ", charHeader: "Характер", famHeader: "История Рода", lifeHeader: "Стиль Жизни", sportLabel: "Опыт в программе" },
+                        verified: "Личность подтверждена",
+                        data: {
+                            eyeColorShort: "Карие",
+                            eyes: "Насыщенные карие, выразительный взгляд",
+                            hair: "Коричневые (шатен), прямые, ухоженные",
+                            skin: "Светлая, ровный тон, здоровый вид",
+                            body: "Стройное, пропорциональное (рост 168 см, вес 49 кг)",
+                            edu1: "Высшее образование (Магистр)",
+                            school1: "Полтавский университет экономики и торговли",
+                            edu2: "Менеджмент и администрирование",
+                            school2: "Специалист по управлению",
+                            sports: "Успешный донор (июль 2023), получено 40 клеток",
+                            vision: "100% / Отличное здоровье",
+                            multiples: "Есть собственный здоровый ребенок (сын, 5 лет)",
+                            donor: "Повторное донорство (высокая результативность)",
+                            longevity: "Наследственное долголетие. В семье отсутствуют хронические заболевания.",
+                            character: "Организованная, ответственная и творческая личность. Обладает аналитическим складом ума.",
+                            familyStory: "Я выросла в семье, где всегда ценились знания и саморазвитие. Родители поддерживали мои начинания в искусстве и учебе. Это помогло мне получить качественное образование и сформировать твердые жизненные принципы.",
+                            fatherInfo: "Специалист технического профиля",
+                            motherInfo: "Служащая",
+                            hobbies: "Изобразительное искусство, рисование портретов, самообразование.",
+                            statement: "Я верю, что мой позитивный настрой и отличное здоровье помогут подарить миру новую жизнь."
+                        }
+                    },
+                    en: {
+                        back: "Catalog",
+                        agency: "Garnet International Agency",
+                        dossier: "Confidential Candidate Dossier",
+                        ageSuffix: "y.o.",
+                        nationality: "Ukrainian",
+                        stats: { height: "Height", weight: "Weight", blood: "Blood Type", eyes: "Eyes" },
+                        headers: { tech: "Technical Profile", appearance: "Physical Data", education: "Education", genetics: "Genetics", interview: "Personality" },
+                        fields: { eyes: "Eyes", hair: "Hair", skin: "Skin", body: "Body", health: "Health", multiples: "Children", status: "Status", genHeredity: "Heredity", father: "FATHER", mother: "MOTHER", charHeader: "Character", famHeader: "Family History", lifeHeader: "Lifestyle", sportLabel: "Experience" },
+                        verified: "Identity Verified",
+                        data: {
+                            eyeColorShort: "Brown",
+                            eyes: "Rich brown, expressive eyes",
+                            hair: "Brown, straight, well-groomed",
+                            skin: "Fair, even tone",
+                            body: "Slender (Height 168 cm, Weight 49 kg)",
+                            edu1: "Higher Education (Master's)",
+                            school1: "Poltava University of Economics",
+                            edu2: "Management & Administration",
+                            school2: "Management Specialist",
+                            sports: "Successful donor (July 2023), 40 eggs obtained",
+                            vision: "100% / Excellent health",
+                            multiples: "Has one healthy child (son, 5 y.o.)",
+                            donor: "Repeat Donor (High performance)",
+                            longevity: "Hereditary longevity in the family.",
+                            character: "Organized, responsible, and creative. Analytical mind.",
+                            familyStory: "I grew up in a family where knowledge and self-development were valued. My parents supported my art and studies.",
+                            fatherInfo: "Technical Specialist",
+                            motherInfo: "Office Professional",
+                            hobbies: "Fine arts, portrait drawing, self-education.",
+                            statement: "I believe my positive energy and excellent health will help bring a new life into the world."
+                        }
+                    },
+                    uk: {
+                        back: "Каталог",
+                        agency: "Garnet International Agency",
+                        dossier: "Конфіденційне досьє кандидата",
+                        ageSuffix: "років",
+                        nationality: "Українка",
+                        stats: { height: "Зріст", weight: "Вага", blood: "Група крові", eyes: "Очі" },
+                        headers: { tech: "Технічний Профіль", appearance: "Антропометричні дані", education: "Освіта", genetics: "Генетична Карта", interview: "Особисті Якості" },
+                        fields: { eyes: "Очі", hair: "Волосся", skin: "Шкіра", body: "Статура", health: "Здоров’я", multiples: "Діти", status: "Статус", genHeredity: "Спадковість", father: "БАТЬКО", mother: "МАТИ", charHeader: "Характер", famHeader: "Історія Роду", lifeHeader: "Спосіб Життя", sportLabel: "Досвід" },
+                        verified: "Особу підтверджено",
+                        data: {
+                            eyeColorShort: "Карі",
+                            eyes: "Насичені карі, виразні",
+                            hair: "Коричневе, пряме, доглянуте",
+                            skin: "Світла, здоровий тон",
+                            body: "Струнка (зріст 168 см, вага 49 кг)",
+                            edu1: "Вища освіта (Магістр)",
+                            school1: "Полтавський університет економіки",
+                            edu2: "Менеджмент та адміністрування",
+                            school2: "Спеціаліст з управління",
+                            sports: "Успішний донор (липень 2023), отримано 40 клітин",
+                            vision: "100% / Відмінне здоров'я",
+                            multiples: "Має власну дитину (син, 5 років)",
+                            donor: "Повторне донорство (висока результативність)",
+                            longevity: "Спадкове довголіття.",
+                            character: "Організована, відповідальна та творча особистість.",
+                            familyStory: "Я виросла в сім'ї, де завжди цінувалися знання. Батьки підтримували мої захоплення мистецтвом.",
+                            fatherInfo: "Технічний фахівець",
+                            motherInfo: "Службовець",
+                            hobbies: "Образотворче мистецтво, малювання портретів.",
+                            statement: "Я вірю, що моє здоров'я допоможе подарувати світові нове життя."
+                        }
+                    },
+                    cn: {
+                        back: "目錄",
+                        agency: "Garnet International Agency",
+                        dossier: "候选人绝密档案",
+                        ageSuffix: "岁",
+                        nationality: "乌克兰",
+                        stats: { height: "身高", weight: "体重", blood: "血型", eyes: "瞳色" },
+                        headers: { tech: "技术档案", appearance: "体征数据", education: "教育", genetics: "基因", interview: "面谈" },
+                        fields: { eyes: "瞳色", hair: "发色", skin: "皮肤", body: "体型", health: "健康", multiples: "子女", status: "状态", genHeredity: "遗传", father: "父亲", mother: "母亲", charHeader: "性格", famHeader: "家族史", lifeHeader: "生活方式", sportLabel: "经验" },
+                        verified: "身份验证通过",
+                        data: {
+                            eyeColorShort: "棕色",
+                            eyes: "深邃的棕色，眼神明亮",
+                            hair: "棕色，直发，质地健康",
+                            skin: "肤色白皙，光洁",
+                            body: "身材苗条（身高 168 cm，体重 49 kg）",
+                            edu1: "高等教育（硕士）",
+                            school1: "波尔塔瓦经济大学",
+                            edu2: "管理与行政专业",
+                            school2: "管理专家",
+                            sports: "成功的捐赠者（2023年7月），获得40个卵子",
+                            vision: "100% / 身体非常健康",
+                            multiples: "育有一个健康的男孩（5岁）",
+                            donor: "多次捐赠（极高生育力）",
+                            longevity: "家族成员普遍长寿。",
+                            character: "有条理、负责且富有创意。具备分析思维。",
+                            familyStory: "我在重视知识和自我发展的家庭中长大。父母支持我的艺术创作和学业。",
+                            fatherInfo: "技术专家",
+                            motherInfo: "行政人员",
+                            hobbies: "绘画、肖像创作、自我提升。",
+                            statement: "我相信我的积极态度和健康的体魄能为世界带来美丽的新生命。"
+                        }
+                    }
+                },
+                t() { return this.translations[this.lang] || this.translations['ru']; }
+            };
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .page-break { page-break-after: always; }
+        @media (min-width: 768px) { .page-container { aspect-ratio: 1 / 1.414; } }
+        [x-cloak] { display: none !important; }
+        @media print { .no-print { display: none !important; } body { background: white; } .shadow-2xl { box-shadow: none !important; } }
+        img { background-color: #e5e7eb; object-fit: cover; image-rendering: -webkit-optimize-contrast; }
+
+        /* Та самая рабочая кнопка */
+        .btn-nav {
+            @apply flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur border border-slate-200 shadow-lg rounded-full text-[10px] font-black uppercase transition-all hover:bg-slate-50 active:scale-95 text-slate-600 pointer-events-auto;
+        }
+    </style>
+</head>
+<body class="antialiased" x-data="dossierData()" x-cloak>
+
+    <!-- Navigation Fixed Panel -->
+    <div class="fixed top-4 left-4 right-4 z-50 flex justify-between items-center no-print sm:top-6 sm:left-6 sm:right-6 pointer-events-none">
+        <!-- Back Button -->
+        <a href="index.html" class="btn-nav">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span x-text="t().back"></span>
+        </a>
+
+        <!-- Language Switcher -->
+        <div class="flex gap-1 p-1 bg-white/90 backdrop-blur border border-slate-200 shadow-xl rounded-full pointer-events-auto">
+            <template x-for="l in ['ru', 'en', 'uk', 'cn']">
+                <button @click="lang = l" class="px-3 py-1.5 rounded-full text-[9px] font-black uppercase transition-all"
+                    :class="lang === l ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400 hover:text-blue-600'" x-text="l"></button>
+            </template>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto pt-24 pb-12 sm:pt-32 px-4 space-y-12 sm:space-y-20">
+
+        <!-- PAGE 1: VISUAL PASSPORT -->
+        <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] overflow-hidden flex flex-col p-6 sm:p-14 border border-slate-200 relative page-break">
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-6 sm:mb-12 border-b pb-6 sm:pb-10 border-slate-100">
+                <div class="mb-4 sm:mb-0">
+                    <div class="flex items-center gap-2 mb-2 sm:mb-3">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <p class="text-blue-600 font-black tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-[10px] uppercase leading-none" x-text="t().agency"></p>
+                    </div>
+                    <h1 class="text-4xl sm:text-7xl font-extralight tracking-tighter text-slate-900 leading-none uppercase">ID: 07011996</h1>
+                    <p class="text-slate-400 mt-2 sm:mt-4 uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-[10px] font-bold" x-text="t().dossier"></p>
+                </div>
+                <div class="flex-shrink-0 bg-slate-50 p-4 rounded-2xl border border-slate-100 min-w-[120px] text-left sm:text-right mt-4 sm:mt-0">
+                    <p class="text-2xl sm:text-4xl font-light text-slate-800 whitespace-nowrap leading-tight"><span x-text="data.age"></span> <span x-text="t().ageSuffix"></span></p>
+                    <p class="text-slate-400 text-[8px] font-black uppercase tracking-widest mt-1" x-text="t().nationality"></p>
+                </div>
+            </div>
+
+            <!-- Photos Grid -->
+            <div class="flex flex-col sm:grid sm:grid-cols-12 gap-4 sm:gap-8 flex-grow mb-6 sm:mb-12">
+                <div class="sm:col-span-8 aspect-[4/5] sm:h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 relative">
+                    <img :src="getImg(photos.main)" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:col-span-4 flex flex-row sm:flex-col gap-4 sm:gap-8">
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border bg-slate-100">
+                        <img :src="getImg(photos.full)" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border bg-slate-100">
+                        <img :src="getImg(photos.athletic)" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 sm:py-10 border-t border-slate-100 text-center">
+                <template x-for="(label, key) in t().stats">
+                    <div class="bg-slate-50/50 sm:bg-transparent p-2 rounded-xl">
+                        <p class="text-[7px] sm:text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1" x-text="label"></p>
+                        <p class="text-sm sm:text-2xl font-light text-slate-800" x-text="key === 'height' ? '168 см' : (key === 'weight' ? '49 кг' : (key === 'blood' ? 'III (B) Rh+' : t().data.eyeColorShort))"></p>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- PAGE 2: TECHNICAL PROFILE -->
+        <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-16 flex flex-col border border-slate-200 page-break">
+            <h2 class="text-2xl sm:text-4xl font-extralight text-slate-800 mb-8 sm:mb-16 flex items-center gap-4 sm:gap-6">
+                <span class="w-10 h-10 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-xl font-bold shadow-xl rotate-3">02</span>
+                <span x-text="t().headers.tech"></span>
+            </h2>
+            <div class="space-y-8 sm:space-y-12 flex-grow">
+                <section>
+                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-blue-600 mb-4 sm:mb-6" x-text="t().headers.appearance"></h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                        <template x-for="f in ['eyes', 'hair', 'skin', 'body']">
+                            <div class="flex sm:contents border-b sm:border-none border-slate-50 last:border-none">
+                                <div class="w-1/3 sm:w-auto bg-slate-50/50 p-4 sm:p-5 text-slate-400 text-[7px] sm:text-[9px] font-black uppercase flex items-center" x-text="t().fields[f]"></div>
+                                <div class="w-2/3 sm:w-auto bg-white p-4 sm:p-5 text-xs sm:text-sm font-medium leading-relaxed" x-text="t().data[f]"></div>
+                            </div>
+                        </template>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-blue-600 mb-4 sm:mb-6" x-text="t().headers.education"></h3>
+                    <div class="space-y-3">
+                        <div class="p-4 sm:p-6 bg-blue-50/40 rounded-2xl border border-blue-100">
+                            <p class="font-bold text-slate-800" x-text="t().data.edu1"></p>
+                            <p class="text-[10px] sm:text-xs text-slate-500 mt-1" x-text="t().data.school1"></p>
+                        </div>
+                        <div class="mt-4 p-4 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase mb-1" x-text="t().fields.sportLabel"></p>
+                            <p class="font-bold text-slate-800" x-text="t().data.sports"></p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase text-blue-600 mb-4 sm:mb-6 flex items-center gap-3">
+                        <span x-text="t().headers.genetics"></span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="p-4 sm:p-6 border border-slate-100 rounded-2xl sm:rounded-3xl bg-white shadow-sm text-center">
+                            <p class="uppercase font-black text-slate-300 mb-1 sm:mb-3 tracking-widest text-[7px] sm:text-[10px]" x-text="t().fields.health"></p>
+                            <p class="font-bold leading-tight text-[10px] sm:text-base" x-text="t().data.vision"></p>
+                        </div>
+                        <div class="p-4 sm:p-6 border border-slate-100 rounded-2xl sm:rounded-3xl bg-white shadow-sm text-center">
+                            <p class="uppercase font-black text-slate-300 mb-1 sm:mb-3 tracking-widest text-[7px] sm:text-[10px]" x-text="t().fields.status"></p>
+                            <p class="font-bold leading-tight text-[10px] sm:text-base" x-text="t().data.donor"></p>
+                        </div>
+                        <div class="p-4 sm:p-6 border border-slate-100 rounded-2xl sm:rounded-3xl bg-white shadow-sm text-center">
+                            <p class="uppercase font-black text-slate-300 mb-1 sm:mb-3 tracking-widest text-[7px] sm:text-[10px]" x-text="t().fields.multiples"></p>
+                            <p class="font-bold leading-tight text-[10px] sm:text-base" x-text="t().data.multiples"></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- PAGE 3: PERSONALITY -->
+        <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-16 flex flex-col border border-slate-200 relative overflow-hidden page-break">
+            <div class="absolute top-0 right-0 w-48 h-48 sm:w-96 bg-blue-600/5 rounded-bl-[200px] -mr-12 -mt-12"></div>
+            <h2 class="text-2xl sm:text-4xl font-extralight text-slate-800 mb-8 sm:mb-16 flex items-center gap-4" x-text="t().headers.interview"></h2>
+            
+            <div class="flex-grow space-y-8 sm:space-y-14 z-10 relative text-lg leading-relaxed">
+                <div class="group">
+                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.charHeader"></h4>
+                    <p class="text-slate-800 text-xs sm:text-lg leading-relaxed pl-4 border-l-4 border-blue-600 font-light italic" x-text="t().data.character"></p>
+                </div>
+                <div class="group">
+                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.famHeader"></h4>
+                    <div class="bg-slate-50 p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-inner">
+                        <p class="text-slate-600 text-xs sm:text-base leading-relaxed italic font-light mb-4 sm:mb-8" x-text="'&quot;' + t().data.familyStory + '&quot;'"></p>
+                        <div class="pt-4 sm:pt-8 border-t border-slate-200 grid grid-cols-2 gap-4 sm:gap-10">
+                            <div><p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.father"></p><p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.fatherInfo"></p></div>
+                            <div><p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.mother"></p><p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.motherInfo"></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:grid sm:grid-cols-12 gap-8 items-end">
+                    <div class="sm:col-span-7 space-y-6 sm:space-y-12 w-full">
+                        <div><h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.lifeHeader"></h4><p class="text-slate-600 text-xs sm:text-base font-light leading-relaxed" x-text="t().data.hobbies"></p></div>
+                        <div class="p-6 sm:p-10 bg-blue-600 text-white rounded-[2.5rem] shadow-2xl shadow-blue-100 transform sm:-rotate-1 w-full text-center">
+                            <h4 class="text-[8px] sm:text-[10px] font-black text-blue-200 uppercase mb-3 italic tracking-[0.2em] sm:tracking-[0.4em]">Official Statement</h4>
+                            <p class="text-xs sm:text-base font-light italic leading-relaxed" x-text="'«' + t().data.statement + '»'"></p>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-5 w-full aspect-[4/5] bg-white rounded-2xl sm:rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-all duration-1000 cursor-zoom-in">
+                        <img :src="getImg(photos.lifestyle)" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 sm:mt-auto pt-6 sm:pt-14 flex flex-row justify-between items-center border-t border-slate-100 text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] sm:tracking-[0.6em]">
+                <span>Dossier Ver. 3.5 / 2026</span>
+                <div class="flex items-center gap-1 sm:gap-3"><span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(34,197,94,0.8)]"></span><span x-text="t().verified"></span></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
