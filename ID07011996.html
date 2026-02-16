@@ -16,7 +16,6 @@
                 data: {
                     age: 27
                 },
-                // Пути к фото для ID 07011996
                 photos: {
                     main: "photos/ID07011996/16.jpg",      
                     full: "photos/ID07011996/23.jpg",      
@@ -133,7 +132,7 @@
                         ageSuffix: "岁",
                         nationality: "乌克兰",
                         stats: { height: "身高", weight: "体重", blood: "血型", eyes: "瞳色" },
-                        headers: { tech: "技术档案", appearance: "体征数据", education: "教育", genetics: "基因", interview: "面谈" },
+                        headers: { tech: "技术档案", appearance: "体征数据", education: "教育", genetics: "基因图谱", interview: "面试" },
                         fields: { eyes: "瞳色", hair: "发色", skin: "皮肤", body: "体型", health: "健康", multiples: "子女", status: "状态", genHeredity: "遗传", father: "父亲", mother: "母亲", charHeader: "性格", famHeader: "家族史", lifeHeader: "生活方式", sportLabel: "经验" },
                         verified: "身份验证通过",
                         data: {
@@ -170,12 +169,19 @@
         .page-break { page-break-after: always; }
         @media (min-width: 768px) { .page-container { aspect-ratio: 1 / 1.414; } }
         [x-cloak] { display: none !important; }
-        @media print { .no-print { display: none !important; } body { background: white; } .shadow-2xl { box-shadow: none !important; } }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .shadow-2xl { box-shadow: none !important; }
+            .page-container { margin: 0; padding: 10mm; }
+        }
+        
         img { background-color: #e5e7eb; object-fit: cover; image-rendering: -webkit-optimize-contrast; }
 
-        /* Та самая рабочая кнопка */
+        /* Фиксированная кнопка навигации */
         .btn-nav {
-            @apply flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur border border-slate-200 shadow-lg rounded-full text-[10px] font-black uppercase transition-all hover:bg-slate-50 active:scale-95 text-slate-600 pointer-events-auto;
+            @apply flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur border border-slate-200 shadow-lg rounded-full text-[10px] font-black uppercase transition-all hover:bg-slate-50 active:scale-95 text-slate-600;
         }
     </style>
 </head>
@@ -183,15 +189,15 @@
 
     <!-- Navigation Fixed Panel -->
     <div class="fixed top-4 left-4 right-4 z-50 flex justify-between items-center no-print sm:top-6 sm:left-6 sm:right-6 pointer-events-none">
-        <!-- Back Button -->
-        <a href="index.html" class="btn-nav">
+        <!-- Кнопка назад -->
+        <a href="index.html" class="btn-nav pointer-events-auto">
             <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
             </svg>
             <span x-text="t().back"></span>
         </a>
 
-        <!-- Language Switcher -->
+        <!-- Переключатель языков -->
         <div class="flex gap-1 p-1 bg-white/90 backdrop-blur border border-slate-200 shadow-xl rounded-full pointer-events-auto">
             <template x-for="l in ['ru', 'en', 'uk', 'cn']">
                 <button @click="lang = l" class="px-3 py-1.5 rounded-full text-[9px] font-black uppercase transition-all"
@@ -200,36 +206,39 @@
         </div>
     </div>
 
-    <!-- Main Container -->
-    <div class="max-w-4xl mx-auto pt-24 pb-12 sm:pt-32 px-4 space-y-12 sm:space-y-20">
+    <!-- Главный контейнер с отступом сверху -->
+    <div class="max-w-4xl mx-auto pt-28 pb-12 sm:pt-32 px-4 space-y-12 sm:space-y-20">
 
         <!-- PAGE 1: VISUAL PASSPORT -->
         <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] overflow-hidden flex flex-col p-6 sm:p-14 border border-slate-200 relative page-break">
+            <!-- Header -->
             <div class="flex flex-col sm:flex-row justify-between items-start mb-6 sm:mb-12 border-b pb-6 sm:pb-10 border-slate-100">
                 <div class="mb-4 sm:mb-0">
                     <div class="flex items-center gap-2 mb-2 sm:mb-3">
                         <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         <p class="text-blue-600 font-black tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-[10px] uppercase leading-none" x-text="t().agency"></p>
                     </div>
-                    <h1 class="text-4xl sm:text-7xl font-extralight tracking-tighter text-slate-900 leading-none uppercase">ID: 07011996</h1>
+                    <h1 class="text-4xl sm:text-7xl font-extralight tracking-tighter text-slate-900 leading-none">ID: 07011996</h1>
                     <p class="text-slate-400 mt-2 sm:mt-4 uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-[10px] font-bold" x-text="t().dossier"></p>
                 </div>
                 <div class="flex-shrink-0 bg-slate-50 p-4 rounded-2xl border border-slate-100 min-w-[120px] text-left sm:text-right mt-4 sm:mt-0">
                     <p class="text-2xl sm:text-4xl font-light text-slate-800 whitespace-nowrap leading-tight"><span x-text="data.age"></span> <span x-text="t().ageSuffix"></span></p>
-                    <p class="text-slate-400 text-[8px] font-black uppercase tracking-widest mt-1" x-text="t().nationality"></p>
+                    <p class="text-slate-400 text-[8px] sm:text-[10px] font-black uppercase tracking-widest mt-1" x-text="t().nationality"></p>
                 </div>
             </div>
 
-            <!-- Photos Grid -->
+            <!-- Photos Grid: Исправлена проблема наложения -->
             <div class="flex flex-col sm:grid sm:grid-cols-12 gap-4 sm:gap-8 flex-grow mb-6 sm:mb-12">
-                <div class="sm:col-span-8 aspect-[4/5] sm:h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 relative">
+                <!-- Главное фото -->
+                <div class="sm:col-span-8 aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 relative">
                     <img :src="getImg(photos.main)" class="w-full h-full object-cover">
                 </div>
+                <!-- Боковые фото -->
                 <div class="sm:col-span-4 flex flex-row sm:flex-col gap-4 sm:gap-8">
-                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border bg-slate-100">
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
                         <img :src="getImg(photos.full)" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border bg-slate-100">
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
                         <img :src="getImg(photos.athletic)" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -239,7 +248,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 sm:py-10 border-t border-slate-100 text-center">
                 <template x-for="(label, key) in t().stats">
                     <div class="bg-slate-50/50 sm:bg-transparent p-2 rounded-xl">
-                        <p class="text-[7px] sm:text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1" x-text="label"></p>
+                        <p class="text-[7px] sm:text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1 sm:mb-2" x-text="label"></p>
                         <p class="text-sm sm:text-2xl font-light text-slate-800" x-text="key === 'height' ? '168 см' : (key === 'weight' ? '49 кг' : (key === 'blood' ? 'III (B) Rh+' : t().data.eyeColorShort))"></p>
                     </div>
                 </template>
@@ -319,6 +328,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Lifestyle & Statement: Исправлена сетка -->
                 <div class="flex flex-col sm:grid sm:grid-cols-12 gap-8 items-end">
                     <div class="sm:col-span-7 space-y-6 sm:space-y-12 w-full">
                         <div><h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.lifeHeader"></h4><p class="text-slate-600 text-xs sm:text-base font-light leading-relaxed" x-text="t().data.hobbies"></p></div>
@@ -327,11 +337,13 @@
                             <p class="text-xs sm:text-base font-light italic leading-relaxed" x-text="'«' + t().data.statement + '»'"></p>
                         </div>
                     </div>
-                    <div class="sm:col-span-5 w-full aspect-[4/5] bg-white rounded-2xl sm:rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-all duration-1000 cursor-zoom-in">
+                    <!-- Lifestyle Image: Исправлена пропорция -->
+                    <div class="sm:col-span-5 w-full aspect-[4/5] bg-white rounded-2xl sm:rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl sm:rotate-2 hover:rotate-0 transition-all duration-1000 cursor-zoom-in">
                         <img :src="getImg(photos.lifestyle)" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
+            <!-- Footer Dossier -->
             <div class="mt-8 sm:mt-auto pt-6 sm:pt-14 flex flex-row justify-between items-center border-t border-slate-100 text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] sm:tracking-[0.6em]">
                 <span>Dossier Ver. 3.5 / 2026</span>
                 <div class="flex items-center gap-1 sm:gap-3"><span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(34,197,94,0.8)]"></span><span x-text="t().verified"></span></div>
