@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
@@ -12,7 +12,7 @@
     <script>
         function dossierData() {
             return {
-                lang: 'ru',
+                lang: 'en',
                 data: {
                     age: 27
                 },
@@ -93,7 +93,7 @@
                             statement: "I am proud of my health and the opportunity to give others a chance for a legacy with strong genetics."
                         }
                     },
-                    uk: {
+                    ua: {
                         back: "Каталог",
                         agency: "Garnet International Agency",
                         dossier: "Конфіденційне досьє кандидата",
@@ -200,7 +200,7 @@
 
         <!-- Language Switcher -->
         <div class="flex gap-1 p-1 bg-white/90 backdrop-blur border border-slate-200 shadow-xl rounded-full pointer-events-auto">
-            <template x-for="l in ['ru', 'en', 'uk', 'cn']">
+            <template x-for="l in ['ru', 'en', 'ua', 'cn']">
                 <button @click="lang = l" class="px-3 py-1.5 rounded-full text-[9px] font-black uppercase transition-all"
                     :class="lang === l ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400 hover:text-blue-600'" x-text="l"></button>
             </template>
@@ -352,5 +352,6 @@
     </div>
 </body>
 </html>
+
 
 
