@@ -120,7 +120,7 @@
 
             <!-- Language Switcher -->
             <div class="flex gap-1 p-1 bg-slate-100 rounded-full border border-slate-200">
-                <template x-for="l in ['ru', 'uk', 'en', 'cn']">
+                <template x-for="l in ['ru', 'ua', 'en', 'cn']">
                     <button @click="lang = l" 
                         class="px-4 py-1.5 rounded-full text-[10px] font-black transition-all uppercase"
                         :class="lang === l ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-400 hover:text-blue-600'"
@@ -334,3 +334,4 @@
 
 </body>
 </html>
+
