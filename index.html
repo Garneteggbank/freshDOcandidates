@@ -13,81 +13,121 @@
         function catalogData() {
             return {
                 lang: 'en',
+                
+                // Состояние фильтров
+                filters: {
+                    blood: 'all',
+                    eyes: 'all',
+                    hair: 'all',
+                    height: 'all'
+                },
+
+                // База данных всех кандидатов
+                candidates: [
+                    { id: '26122001', age: 24, height: 181, weight: 58, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'green', hair: 'brown', link: 'ID26122001.html', photo: 'photos/ID26122001/8.jpg' },
+                    { id: '25071999', age: 26, height: 169, weight: 52, blood: 'IV', bloodFull: 'IV (AB) Rh+', eyes: 'hazel', hair: 'light_brown', link: 'ID25071999.html', photo: 'photos/ID25071999/9.jpg' },
+                    { id: '31031999', age: 27, height: 170, weight: 52, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'gray_green', hair: 'blonde', link: 'ID31031999.html', photo: 'photos/ID31031999/8.jpg' },
+                    { id: '24012001', age: 25, height: 170, weight: 50, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'hazel', hair: 'light_brown', link: 'ID24012001.html', photo: 'photos/ID24012001/6.jpg' },
+                    { id: '07011996', age: 27, height: 168, weight: 49, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'brown', hair: 'brown', link: 'ID07011996.html', photo: 'photos/ID07011996/16.jpg' },
+                    { id: '20082004', age: 19, height: 175, weight: 57, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'gray', hair: 'light_brown', link: 'ID20082004.html', photo: 'photos/ID20082004/1.jpg' }
+                ],
+
+                // Логика фильтрации
+                get filteredCandidates() {
+                    return this.candidates.filter(c => {
+                        if (this.filters.blood !== 'all' && c.blood !== this.filters.blood) return false;
+                        if (this.filters.eyes !== 'all' && c.eyes !== this.filters.eyes) return false;
+                        if (this.filters.hair !== 'all' && c.hair !== this.filters.hair) return false;
+                        if (this.filters.height !== 'all') {
+                            if (this.filters.height === 'short' && c.height >= 170) return false;
+                            if (this.filters.height === 'medium' && (c.height < 170 || c.height >= 175)) return false;
+                            if (this.filters.height === 'tall' && c.height < 175) return false;
+                        }
+                        return true;
+                    });
+                },
+
+                // Сброс фильтров
+                resetFilters() {
+                    this.filters = { blood: 'all', eyes: 'all', hair: 'all', height: 'all' };
+                },
+
+                // Языковые переводы
                 translations: {
                     ru: {
                         agency: "Garnet International",
                         catalogTitle: "Каталог Кандидатов",
                         activeHeader: "Активные Анкеты",
-                        subHeader: "Выберите кандидата для просмотра полного конфиденциального досье",
+                        subHeader: "Выберите кандидата для просмотра или воспользуйтесь фильтром",
                         nationality: "Украинка",
-                        ageSuffix: "года",
-                        ageSuffixAlt: "лет",
-                        stats: { height: "Рост", blood: "Группа крови", eyes: "Цвет глаз" },
+                        ageSuffix: "лет",
+                        stats: { height: "Рост", blood: "Группа крови", eyes: "Глаза", hair: "Волосы" },
                         viewBtn: "Просмотреть досье",
                         statusActive: "Активна",
-                        data: {
-                            id26122001: { eyes: "Зеленые", blood: "III (B) Rh+" },
-                            id25071999: { eyes: "Каре-зеленые", blood: "IV (AB) Rh+" },
-                            id31031999: { eyes: "Серо-зеленые", blood: "I (A) Rh+" },
-                            id24012001: { eyes: "Зелено-карие", blood: "I (O) Rh+" },
-                            id07011996: { eyes: "Карие", blood: "III (B) Rh+" }
+                        emptyState: "Кандидаты по выбранным параметрам не найдены.",
+                        filterLabels: { blood: "Группа крови", eyes: "Цвет глаз", hair: "Цвет волос", height: "Рост", all: "Все", reset: "Сбросить фильтр" },
+                        options: {
+                            eyes: { green: "Зеленые", hazel: "Каре-зеленые", gray_green: "Серо-зеленые", brown: "Карие", gray: "Серые" },
+                            hair: { brown: "Коричневые (шатен)", light_brown: "Русые", blonde: "Блонд" },
+                            height: { short: "До 170 см", medium: "170 - 174 см", tall: "От 175 см" },
+                            blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
                         }
                     },
-                    ua: {
+                    uk: {
                         agency: "Garnet International",
                         catalogTitle: "Каталог Кандидатів",
                         activeHeader: "Активні Анкети",
-                        subHeader: "Оберіть кандидата для перегляду повного конфіденційного досьє",
+                        subHeader: "Оберіть кандидата для перегляду або скористайтеся фільтром",
                         nationality: "Українка",
-                        ageSuffix: "роки",
-                        ageSuffixAlt: "років",
-                        stats: { height: "Зріст", blood: "Група крові", eyes: "Колір очей" },
+                        ageSuffix: "років",
+                        stats: { height: "Зріст", blood: "Група крові", eyes: "Очі", hair: "Волосся" },
                         viewBtn: "Переглянути досьє",
                         statusActive: "Активна",
-                        data: {
-                            id26122001: { eyes: "Зелені", blood: "III (B) Rh+" },
-                            id25071999: { eyes: "Каро-зелені", blood: "IV (AB) Rh+" },
-                            id31031999: { eyes: "Сіро-зелені", blood: "I (A) Rh+" },
-                            id24012001: { eyes: "Зелено-карі", blood: "I (O) Rh+" },
-                            id07011996: { eyes: "Карі", blood: "III (B) Rh+" }
+                        emptyState: "Кандидатів за вибраними параметрами не знайдено.",
+                        filterLabels: { blood: "Група крові", eyes: "Колір очей", hair: "Колір волосся", height: "Зріст", all: "Всі", reset: "Скинути фільтр" },
+                        options: {
+                            eyes: { green: "Зелені", hazel: "Каро-зелені", gray_green: "Сіро-зелені", brown: "Карі", gray: "Сірі" },
+                            hair: { brown: "Коричневе", light_brown: "Русяве", blonde: "Блонд" },
+                            height: { short: "До 170 см", medium: "170 - 174 см", tall: "Від 175 см" },
+                            blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
                         }
                     },
                     en: {
                         agency: "Garnet International",
                         catalogTitle: "Candidate Catalog",
                         activeHeader: "Active Dossiers",
-                        subHeader: "Select a candidate to view the full confidential dossier",
+                        subHeader: "Select a candidate to view or use the filters below",
                         nationality: "Ukrainian",
                         ageSuffix: "y.o.",
-                        ageSuffixAlt: "y.o.",
-                        stats: { height: "Height", blood: "Blood Type", eyes: "Eye Color" },
+                        stats: { height: "Height", blood: "Blood Type", eyes: "Eyes", hair: "Hair" },
                         viewBtn: "View dossier",
                         statusActive: "Active",
-                        data: {
-                            id26122001: { eyes: "Green", blood: "III (B) Rh+" },
-                            id25071999: { eyes: "Hazel-green", blood: "IV (AB) Rh+" },
-                            id31031999: { eyes: "Gray-green", blood: "I (A) Rh+" },
-                            id24012001: { eyes: "Green-brown", blood: "I (O) Rh+" },
-                            id07011996: { eyes: "Brown", blood: "III (B) Rh+" }
+                        emptyState: "No candidates found matching your criteria.",
+                        filterLabels: { blood: "Blood Type", eyes: "Eye Color", hair: "Hair Color", height: "Height", all: "All", reset: "Reset Filters" },
+                        options: {
+                            eyes: { green: "Green", hazel: "Hazel", gray_green: "Gray-green", brown: "Brown", gray: "Gray" },
+                            hair: { brown: "Brown", light_brown: "Light Brown", blonde: "Blonde" },
+                            height: { short: "Under 170 cm", medium: "170 - 174 cm", tall: "175 cm and above" },
+                            blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
                         }
                     },
                     cn: {
                         agency: "Garnet International",
                         catalogTitle: "候選人目錄",
-                        activeHeader: "進行中的檔案",
-                        subHeader: "選擇候選人以查看完整的機密檔案",
-                        nationality: "烏克蘭",
-                        ageSuffix: "歲",
-                        ageSuffixAlt: "歲",
-                        stats: { height: "身高", blood: "血型", eyes: "瞳色" },
-                        viewBtn: "查看詳細檔案",
-                        statusActive: "活動中",
-                        data: {
-                            id26122001: { eyes: "綠色", blood: "III (B) Rh+" },
-                            id25071999: { eyes: "棕綠色", blood: "IV (AB) Rh+" },
-                            id31031999: { eyes: "灰綠色", blood: "I (A) Rh+" },
-                            id24012001: { eyes: "綠棕色", blood: "I (O) Rh+" },
-                            id07011996: { eyes: "棕色", blood: "III (B) Rh+" }
+                        activeHeader: "进行中的档案",
+                        subHeader: "选择候选人以查看完整的机密档案或使用筛选器",
+                        nationality: "乌克兰",
+                        ageSuffix: "岁",
+                        stats: { height: "身高", blood: "血型", eyes: "瞳色", hair: "发色" },
+                        viewBtn: "查看详细档案",
+                        statusActive: "活动中",
+                        emptyState: "未找到符合所选条件的候选人。",
+                        filterLabels: { blood: "血型", eyes: "瞳色", hair: "发色", height: "身高", all: "全部", reset: "重置筛选" },
+                        options: {
+                            eyes: { green: "绿色", hazel: "棕绿色", gray_green: "灰绿色", brown: "棕色", gray: "灰色" },
+                            hair: { brown: "棕色", light_brown: "浅棕色", blonde: "金发" },
+                            height: { short: "170 cm 以下", medium: "170 - 174 cm", tall: "175 cm 及以上" },
+                            blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
                         }
                     }
                 },
@@ -100,12 +140,23 @@
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
         .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); }
         .card-hover:hover { transform: translateY(-8px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        /* Стили для селектов */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: 50%;
+        }
+
         [x-cloak] { display: none !important; }
     </style>
 </head>
 <body class="antialiased text-slate-800" x-data="catalogData()" x-cloak>
 
-    <!-- Header -->
+    <!-- Header (Шапка) -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50 backdrop-blur-md bg-white/80">
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
@@ -120,10 +171,10 @@
 
             <!-- Language Switcher -->
             <div class="flex gap-1 p-1 bg-slate-100 rounded-full border border-slate-200">
-                <template x-for="l in ['ru', 'ua', 'en', 'cn']">
+                <template x-for="l in ['ru', 'uk', 'en', 'cn']">
                     <button @click="lang = l" 
                         class="px-4 py-1.5 rounded-full text-[10px] font-black transition-all uppercase"
-                        :class="lang === l ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-400 hover:text-blue-600'"
+                        :class="lang === l ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-400 hover:text-slate-600'"
                         x-text="l">
                     </button>
                 </template>
@@ -133,198 +184,129 @@
 
     <main class="max-w-7xl mx-auto px-6 py-12">
         
-        <div class="mb-12 text-center md:text-left">
+        <!-- Заголовок страницы -->
+        <div class="mb-10 text-center md:text-left">
             <h2 class="text-4xl font-extralight text-slate-900 tracking-tight mb-2" x-text="t().activeHeader"></h2>
             <p class="text-slate-500 text-sm font-medium" x-text="t().subHeader"></p>
         </div>
 
-        <!-- Grid Layout for Candidates -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            
-            <!-- КАНДИДАТ 1: ID 26122001 -->
-            <a href="ID26122001.html" class="card-hover group block">
-                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
-                    <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
-                        <img src="photos/ID26122001/8.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 26122001</h3>
-                            <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
-                                <span x-text="t().nationality"></span>, 24 <span x-text="t().ageSuffix"></span>
-                            </p>
-                        </div>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
-                                <span class="text-slate-900 font-bold">181 см</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px] text-blue-600">
-                                <span class="font-bold uppercase tracking-wider text-slate-400" x-text="t().stats.blood"></span>
-                                <span class="font-black" x-text="t().data.id26122001.blood"></span>
-                            </div>
-                            <div class="flex justify-between text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.eyes"></span>
-                                <span class="text-slate-900 font-bold" x-text="t().data.id26122001.eyes"></span>
-                            </div>
-                        </div>
-                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
-                            <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </div>
-                    </div>
+        <!-- ================= БЛОК ФИЛЬТРОВ ================= -->
+        <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm mb-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+                
+                <!-- Группа крови -->
+                <div class="w-full">
+                    <label class="block text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1" x-text="t().filterLabels.blood"></label>
+                    <select x-model="filters.blood" class="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent block p-3 outline-none transition-all cursor-pointer">
+                        <option value="all" x-text="t().filterLabels.all"></option>
+                        <template x-for="(label, key) in t().options.blood" :key="key">
+                            <option :value="key" x-text="label"></option>
+                        </template>
+                    </select>
                 </div>
-            </a>
 
-            <!-- КАНДИДАТ 2: ID 25071999 -->
-            <a href="ID25071999.html" class="card-hover group block">
-                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
-                    <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
-                        <img src="photos/ID25071999/9.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 25071999</h3>
-                            <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
-                                <span x-text="t().nationality"></span>, 26 <span x-text="t().ageSuffixAlt"></span>
-                            </p>
-                        </div>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
-                                <span class="text-slate-900 font-bold">169 см</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px] text-blue-600">
-                                <span class="font-bold uppercase tracking-wider text-slate-400" x-text="t().stats.blood"></span>
-                                <span class="font-black" x-text="t().data.id25071999.blood"></span>
-                            </div>
-                            <div class="flex justify-between text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.eyes"></span>
-                                <span class="text-slate-900 font-bold" x-text="t().data.id25071999.eyes"></span>
-                            </div>
-                        </div>
-                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
-                            <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </div>
-                    </div>
+                <!-- Цвет глаз -->
+                <div class="w-full">
+                    <label class="block text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1" x-text="t().filterLabels.eyes"></label>
+                    <select x-model="filters.eyes" class="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent block p-3 outline-none transition-all cursor-pointer">
+                        <option value="all" x-text="t().filterLabels.all"></option>
+                        <template x-for="(label, key) in t().options.eyes" :key="key">
+                            <option :value="key" x-text="label"></option>
+                        </template>
+                    </select>
                 </div>
-            </a>
 
-            <!-- КАНДИДАТ 3: ID 31031999 -->
-            <a href="ID31031999.html" class="card-hover group block">
-                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
-                    <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
-                        <img src="photos/ID31031999/8.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 31031999</h3>
-                            <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
-                                <span x-text="t().nationality"></span>, 27 <span x-text="t().ageSuffixAlt"></span>
-                            </p>
-                        </div>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
-                                <span class="text-slate-900 font-bold">170 см</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px] text-blue-600">
-                                <span class="font-bold uppercase tracking-wider text-slate-400" x-text="t().stats.blood"></span>
-                                <span class="font-black" x-text="t().data.id31031999.blood"></span>
-                            </div>
-                            <div class="flex justify-between text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.eyes"></span>
-                                <span class="text-slate-900 font-bold" x-text="t().data.id31031999.eyes"></span>
-                            </div>
-                        </div>
-                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
-                            <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </div>
-                    </div>
+                <!-- Цвет волос -->
+                <div class="w-full">
+                    <label class="block text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1" x-text="t().filterLabels.hair"></label>
+                    <select x-model="filters.hair" class="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent block p-3 outline-none transition-all cursor-pointer">
+                        <option value="all" x-text="t().filterLabels.all"></option>
+                        <template x-for="(label, key) in t().options.hair" :key="key">
+                            <option :value="key" x-text="label"></option>
+                        </template>
+                    </select>
                 </div>
-            </a>
 
-            <!-- КАНДИДАТ 4: ID 24012001 -->
-            <a href="ID24012001.html" class="card-hover group block">
-                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
-                    <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
-                        <img src="photos/ID24012001/6.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 24012001</h3>
-                            <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
-                                <span x-text="t().nationality"></span>, 25 <span x-text="t().ageSuffixAlt"></span>
-                            </p>
-                        </div>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
-                                <span class="text-slate-900 font-bold">170 см</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px] text-blue-600">
-                                <span class="font-bold uppercase tracking-wider text-slate-400" x-text="t().stats.blood"></span>
-                                <span class="font-black" x-text="t().data.id24012001.blood"></span>
-                            </div>
-                            <div class="flex justify-between text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.eyes"></span>
-                                <span class="text-slate-900 font-bold" x-text="t().data.id24012001.eyes"></span>
-                            </div>
-                        </div>
-                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
-                            <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </div>
-                    </div>
+                <!-- Рост -->
+                <div class="w-full">
+                    <label class="block text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1" x-text="t().filterLabels.height"></label>
+                    <select x-model="filters.height" class="w-full bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent block p-3 outline-none transition-all cursor-pointer">
+                        <option value="all" x-text="t().filterLabels.all"></option>
+                        <template x-for="(label, key) in t().options.height" :key="key">
+                            <option :value="key" x-text="label"></option>
+                        </template>
+                    </select>
                 </div>
-            </a>
 
-            <!-- КАНДИДАТ 5: ID 07011996 (НОВАЯ) -->
-            <a href="ID07011996.html" class="card-hover group block">
-                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
-                    <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
-                        <img src="photos/ID07011996/16.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase">ID: 07011996</h3>
-                            <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
-                                <span x-text="t().nationality"></span>, 27 <span x-text="t().ageSuffixAlt"></span>
-                            </p>
-                        </div>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
-                                <span class="text-slate-900 font-bold">168 см</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px] text-blue-600">
-                                <span class="font-bold uppercase tracking-wider text-slate-400" x-text="t().stats.blood"></span>
-                                <span class="font-black" x-text="t().data.id07011996.blood"></span>
-                            </div>
-                            <div class="flex justify-between text-[11px]">
-                                <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.eyes"></span>
-                                <span class="text-slate-900 font-bold" x-text="t().data.id07011996.eyes"></span>
-                            </div>
-                        </div>
-                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
-                            <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </div>
-                    </div>
+                <!-- Кнопка сброса -->
+                <div class="w-full">
+                    <button @click="resetFilters()" class="w-full px-6 py-3 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-500 text-xs font-black uppercase tracking-widest rounded-xl transition-colors h-[42px] flex items-center justify-center">
+                        <span x-text="t().filterLabels.reset"></span>
+                    </button>
                 </div>
-            </a>
 
+            </div>
         </div>
+        <!-- ================= КОНЕЦ БЛОКА ФИЛЬТРОВ ================= -->
+
+        <!-- Динамическая сетка кандидатов -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <template x-for="c in filteredCandidates" :key="c.id">
+                <a :href="c.link" class="card-hover group block">
+                    <div class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 card-shadow flex flex-col h-full">
+                        <div class="aspect-[4/5] relative overflow-hidden bg-slate-100">
+                            <img :src="c.photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg" x-text="t().statusActive"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase" x-text="'ID: ' + c.id"></h3>
+                                <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
+                                    <span x-text="t().nationality"></span>, <span x-text="c.age"></span> <span x-text="lang === 'en' ? 'y.o.' : (lang === 'cn' ? '岁' : (lang === 'uk' ? 'років' : 'лет'))"></span>
+                                </p>
+                            </div>
+                            
+                            <!-- Характеристики -->
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
+                                    <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
+                                    <span class="text-slate-900 font-bold" x-text="c.height + ' см'"></span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px] text-blue-600">
+                                    <span class="font-bold uppercase tracking-wider text-slate-400" x-text="t().stats.blood"></span>
+                                    <span class="font-black" x-text="c.bloodFull"></span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
+                                    <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.eyes"></span>
+                                    <span class="text-slate-900 font-bold" x-text="t().options.eyes[c.eyes]"></span>
+                                </div>
+                                <div class="flex justify-between text-[11px]">
+                                    <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.hair"></span>
+                                    <span class="text-slate-900 font-bold" x-text="t().options.hair[c.hair]"></span>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group-hover:text-blue-600 transition-colors">
+                                <span class="text-[10px] font-black uppercase tracking-widest" x-text="t().viewBtn"></span>
+                                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Если ничего не найдено -->
+        <div x-show="filteredCandidates.length === 0" class="text-center py-20 bg-white rounded-[2rem] border border-slate-200 border-dashed" x-cloak>
+            <p class="text-slate-400 font-bold text-lg" x-text="t().emptyState"></p>
+            <button @click="resetFilters()" class="mt-4 px-6 py-2 bg-blue-50 text-blue-600 text-xs font-black uppercase tracking-widest rounded-xl hover:bg-blue-100 transition-colors">
+                <span x-text="t().filterLabels.reset"></span>
+            </button>
+        </div>
+
     </main>
 
-    <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-slate-200 mt-20 flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-slate-200 mt-10 flex flex-col md:flex-row justify-between items-center gap-6">
         <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">© 2026 Garnet International Agency</p>
         <div class="flex gap-8">
             <span class="text-[10px] font-black text-slate-300 uppercase tracking-widest">Verified Database</span>
@@ -334,7 +316,3 @@
 
 </body>
 </html>
-
-
-
-
