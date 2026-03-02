@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
@@ -12,16 +12,19 @@
     <script>
         function dossierData() {
             return {
-                lang: 'ru',
+                lang: 'en',
                 data: {
-                    age: 19
+                    // Динамическое вычисление возраста от 2004 года рождения
+                    get age() {
+                        return new Date().getFullYear() - 2004;
+                    }
                 },
                 // Пути к фото для ID 20082004 на вашем GitHub
                 photos: {
                     main: "photos/ID20082004/1.jpg",      
                     full: "photos/ID20082004/2.jpg",      
                     athletic: "photos/ID20082004/3.jpg",  
-                    lifestyle: "photos/ID20082004/4.jpg" 
+                    lifestyle: "photos/ID20082004/8.jpg" 
                 },
                 getImg(path) {
                     return path;
@@ -31,7 +34,7 @@
                         back: "Каталог",
                         agency: "Garnet International Agency",
                         dossier: "Конфиденциальное досье кандидата",
-                        ageSuffix: "лет",
+                        ageSuffix: "года",
                         nationality: "Украинка",
                         stats: { height: "Рост", weight: "Вес", blood: "Группа крови", eyes: "Глаза" },
                         headers: { tech: "Технический Профиль", appearance: "Антропометрические данные", education: "Образование и Достижения", genetics: "Генетическая Карта", interview: "Личные Качества и Интервью" },
@@ -47,15 +50,15 @@
                             school1: "Киевский национальный авиационный университет",
                             edu2: "Текущая деятельность",
                             school2: "Студентка",
-                            sports: "Отличный овариальный резерв — АМГ 6.2",
+                            sports: "Отличный овариальный резерв — АМГ 6.2, получено более 30 клеток М2",
                             vision: "100% / Отличное здоровье",
-                            multiples: "Своих детей нет. В семье есть старшая сестра.",
+                            multiples: "В семье есть старшая сестра.",
                             donor: "Первичное донорство",
                             longevity: "Наследственное долголетие. Члены семьи абсолютно здоровы, без хронических заболеваний.",
                             character: "Целеустремленная, эрудированная и отзывчивая. Активно увлекается волонтерством.",
                             familyStory: "Я выросла в любящей и поддерживающей семье. Мои родители всегда поощряли мою тягу к знаниям и саморазвитию. У меня есть старшая сестра, с которой мы очень близки. Семья научила меня быть ответственной и помогать окружающим.",
-                            fatherInfo: "Служащий",
-                            motherInfo: "Служащая",
+                            fatherInfo: "Бизнесмен",
+                            motherInfo: "Госслужащая",
                             hobbies: "Углубленное изучение истории, волонтерская деятельность, чтение.",
                             statement: "Я хочу подарить кому-то шанс на создание счастливой семьи, опираясь на свою молодость, энергию и крепкую генетику."
                         }
@@ -80,15 +83,15 @@
                             school1: "Kyiv National Aviation University",
                             edu2: "Current Status",
                             school2: "Student",
-                            sports: "Excellent ovarian reserve — AMH 6.2",
+                            sports: "Excellent ovarian reserve — AMH 6.2, over 30 M2 cells obtained",
                             vision: "100% / Excellent health",
-                            multiples: "No children. Has an older sister.",
+                            multiples: "Has an older sister.",
                             donor: "First-time donor",
                             longevity: "Hereditary longevity. All family members are perfectly healthy.",
                             character: "Goal-oriented, well-read, and empathetic. Actively involved in volunteering.",
                             familyStory: "I grew up in a loving and supportive family. My parents always encouraged my desire for knowledge and self-development. I have an older sister with whom I am very close.",
-                            fatherInfo: "Office Worker",
-                            motherInfo: "Office Worker",
+                            fatherInfo: "Businessman",
+                            motherInfo: "Civil Servant",
                             hobbies: "History, volunteering, reading.",
                             statement: "I want to give someone the chance to create a happy family, relying on my youth, energy, and strong genetics."
                         }
@@ -113,15 +116,15 @@
                             school1: "Київський національний авіаційний університет",
                             edu2: "Поточна діяльність",
                             school2: "Студентка",
-                            sports: "Відмінний оваріальний резерв — АМГ 6.2",
+                            sports: "Відмінний оваріальний резерв — АМГ 6.2, отримано понад 30 клітин М2",
                             vision: "100% / Відмінне здоров'я",
-                            multiples: "Власних дітей немає. Є старша сестра.",
+                            multiples: "Є старша сестра.",
                             donor: "Первинне донорство",
                             longevity: "Спадкове довголіття. Всі члени сім'ї абсолютно здорові.",
                             character: "Цілеспрямована, ерудована та чуйна. Активно займається волонтерством.",
                             familyStory: "Я виросла в люблячій сім'ї. Мої батьки завжди заохочували мій потяг до знань та саморозвитку. Маю старшу сестру, з якою ми дуже близькі.",
-                            fatherInfo: "Службовець",
-                            motherInfo: "Службовець",
+                            fatherInfo: "Бізнесмен",
+                            motherInfo: "Держслужбовець",
                             hobbies: "Історія, волонтерська діяльність, читання.",
                             statement: "Я хочу подарувати комусь шанс на створення щасливої родини, спираючись на свою молодість та міцну генетику."
                         }
@@ -146,15 +149,15 @@
                             school1: "基辅国立航空大学",
                             edu2: "当前身份",
                             school2: "学生",
-                            sports: "极佳的卵巢储备功能 — AMH 6.2",
+                            sports: "极佳的卵巢储备功能 — AMH 6.2，获得超过30个M2卵子",
                             vision: "100% / 身体非常健康",
-                            multiples: "无子女。有一个姐姐。",
+                            multiples: "有一个姐姐。",
                             donor: "首次捐赠",
                             longevity: "家族成员普遍长寿且完全健康。",
                             character: "目标明确、博学且富有同情心。积极参与志愿服务。",
                             familyStory: "我成长在一个充满爱和支持的家庭。我的父母总是鼓励我对知识的渴望和自我发展。我有一个关系非常亲密的姐姐。",
-                            fatherInfo: "职员",
-                            motherInfo: "职员",
+                            fatherInfo: "商人",
+                            motherInfo: "公务员",
                             hobbies: "历史、志愿服务、阅读。",
                             statement: "我希望凭借我的青春、活力和优良的基因，为他人提供建立幸福家庭的机会。"
                         }
@@ -183,7 +186,8 @@
 
     <!-- Navigation Fixed Panel -->
     <div class="fixed top-4 left-4 right-4 z-50 flex justify-between items-center no-print sm:top-6 sm:left-6 sm:right-6 pointer-events-none">
-        <a href="index.html" class="btn-nav">
+        <!-- Кнопка назад -->
+        <a href="index.html" class="btn-nav pointer-events-auto">
             <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
             </svg>
@@ -321,38 +325,59 @@
 
             <div class="flex-grow space-y-8 sm:space-y-14 z-10 relative text-lg leading-relaxed">
                 <div class="group">
-                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.charHeader"></h4>
+                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-3 sm:mb-5 flex items-center gap-3">
+                        <span x-text="t().fields.charHeader"></span>
+                    </h4>
                     <p class="text-slate-800 text-xs sm:text-lg leading-relaxed pl-4 sm:pl-8 border-l-4 border-blue-600 font-light italic" x-text="t().data.character"></p>
                 </div>
+
                 <div class="group">
-                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.famHeader"></h4>
+                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-3 sm:mb-5 flex items-center gap-3">
+                        <span x-text="t().fields.famHeader"></span>
+                    </h4>
                     <div class="bg-slate-50 p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-inner">
                         <p class="text-slate-600 text-xs sm:text-base leading-relaxed italic font-light mb-4 sm:mb-8" x-text="'&quot;' + t().data.familyStory + '&quot;'"></p>
                         <div class="pt-4 sm:pt-8 border-t border-slate-200 grid grid-cols-2 gap-4 sm:gap-10">
-                            <div><p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.father"></p><p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.fatherInfo"></p></div>
-                            <div><p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.mother"></p><p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.motherInfo"></p></div>
+                            <div>
+                                <p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.father"></p>
+                                <p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.fatherInfo"></p>
+                            </div>
+                            <div>
+                                <p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.mother"></p>
+                                <p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.motherInfo"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="flex flex-col sm:grid sm:grid-cols-12 gap-8 items-end">
                     <div class="sm:col-span-7 space-y-6 sm:space-y-12 w-full">
-                        <div><h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.lifeHeader"></h4><p class="text-slate-600 text-xs sm:text-base font-light leading-relaxed" x-text="t().data.hobbies"></p></div>
+                        <div>
+                            <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] sm:tracking-[0.4em] mb-3 sm:mb-5" x-text="t().fields.lifeHeader"></h4>
+                            <p class="text-slate-600 text-xs sm:text-base font-light leading-relaxed" x-text="t().data.hobbies"></p>
+                        </div>
                         <div class="p-6 sm:p-10 bg-blue-600 text-white rounded-[2.5rem] shadow-2xl shadow-blue-100 transform sm:-rotate-1 w-full text-center">
                             <h4 class="text-[8px] sm:text-[10px] font-black text-blue-200 uppercase mb-3 italic tracking-[0.2em] sm:tracking-[0.4em]">Official Statement</h4>
                             <p class="text-xs sm:text-base font-light italic leading-relaxed" x-text="'«' + t().data.statement + '»'"></p>
                         </div>
                     </div>
-                    <div class="sm:col-span-5 w-full aspect-[4/5] bg-white rounded-[2rem] sm:rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl sm:rotate-2 hover:rotate-0 transition-all duration-1000 cursor-zoom-in">
+                    
+                    <div class="sm:col-span-5 w-full aspect-[4/5] bg-white rounded-2xl sm:rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl sm:rotate-2 hover:rotate-0 transition-all duration-1000 cursor-zoom-in">
                         <img :src="getImg(photos.lifestyle)" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
+
             <div class="mt-8 sm:mt-auto pt-6 sm:pt-14 flex flex-row justify-between items-center border-t border-slate-100 text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] sm:tracking-[0.6em]">
                 <span>Dossier Ver. 3.5 / 2026</span>
-                <div class="flex items-center gap-1 sm:gap-3"><span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(34,197,94,0.8)]"></span><span x-text="t().verified"></span></div>
+                <div class="flex items-center gap-1 sm:gap-3">
+                    <span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(34,197,94,0.8)]"></span>
+                    <span x-text="t().verified"></span>
+                </div>
             </div>
         </div>
 
     </div>
+
 </body>
 </html>
