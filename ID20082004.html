@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Garnet Candidate Dossier - ID 20082004</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        function dossierData() {
+            return {
+                lang: 'ru',
+                data: {
+                    age: 19
+                },
+                // Пути к фото для ID 20082004 на вашем GitHub
+                photos: {
+                    main: "photos/ID20082004/1.jpg",      
+                    full: "photos/ID20082004/2.jpg",      
+                    athletic: "photos/ID20082004/3.jpg",  
+                    lifestyle: "photos/ID20082004/4.jpg" 
+                },
+                getImg(path) {
+                    return path;
+                },
+                translations: {
+                    ru: {
+                        back: "Каталог",
+                        agency: "Garnet International Agency",
+                        dossier: "Конфиденциальное досье кандидата",
+                        ageSuffix: "лет",
+                        nationality: "Украинка",
+                        stats: { height: "Рост", weight: "Вес", blood: "Группа крови", eyes: "Глаза" },
+                        headers: { tech: "Технический Профиль", appearance: "Антропометрические данные", education: "Образование и Достижения", genetics: "Генетическая Карта", interview: "Личные Качества и Интервью" },
+                        fields: { eyes: "Глаза", hair: "Волосы", skin: "Кожа", body: "Телосложение", health: "Здоровье", multiples: "Семья", status: "Статус", genHeredity: "Генетическая Наследственность", father: "ОТЕЦ", mother: "МАТЬ", charHeader: "Характер", famHeader: "История Рода", lifeHeader: "Стиль Жизни", sportLabel: "Медицинские данные" },
+                        verified: "Личность подтверждена",
+                        data: {
+                            eyeColorShort: "Серые",
+                            eyes: "Светло-серые, выразительный взгляд",
+                            hair: "Медно-русые (светло-каштановые), длинные и густые",
+                            skin: "Светлая, чистая, ровный тон",
+                            body: "Модельное, стройное (рост 175 см, вес 57 кг)",
+                            edu1: "Высшее образование (в процессе)",
+                            school1: "Киевский национальный авиационный университет",
+                            edu2: "Текущая деятельность",
+                            school2: "Студентка",
+                            sports: "Отличный овариальный резерв — АМГ 6.2",
+                            vision: "100% / Отличное здоровье",
+                            multiples: "Своих детей нет. В семье есть старшая сестра.",
+                            donor: "Первичное донорство",
+                            longevity: "Наследственное долголетие. Члены семьи абсолютно здоровы, без хронических заболеваний.",
+                            character: "Целеустремленная, эрудированная и отзывчивая. Активно увлекается волонтерством.",
+                            familyStory: "Я выросла в любящей и поддерживающей семье. Мои родители всегда поощряли мою тягу к знаниям и саморазвитию. У меня есть старшая сестра, с которой мы очень близки. Семья научила меня быть ответственной и помогать окружающим.",
+                            fatherInfo: "Служащий",
+                            motherInfo: "Служащая",
+                            hobbies: "Углубленное изучение истории, волонтерская деятельность, чтение.",
+                            statement: "Я хочу подарить кому-то шанс на создание счастливой семьи, опираясь на свою молодость, энергию и крепкую генетику."
+                        }
+                    },
+                    en: {
+                        back: "Catalog",
+                        agency: "Garnet International Agency",
+                        dossier: "Confidential Candidate Dossier",
+                        ageSuffix: "y.o.",
+                        nationality: "Ukrainian",
+                        stats: { height: "Height", weight: "Weight", blood: "Blood Type", eyes: "Eyes" },
+                        headers: { tech: "Technical Profile", appearance: "Physical Data", education: "Education", genetics: "Genetics", interview: "Personality" },
+                        fields: { eyes: "Eyes", hair: "Hair", skin: "Skin", body: "Body", health: "Health", multiples: "Family", status: "Status", genHeredity: "Heredity", father: "FATHER", mother: "MOTHER", charHeader: "Character", famHeader: "Family History", lifeHeader: "Lifestyle", sportLabel: "Medical Data" },
+                        verified: "Identity Verified",
+                        data: {
+                            eyeColorShort: "Gray",
+                            eyes: "Light gray, expressive",
+                            hair: "Copper/Light brown, long and thick",
+                            skin: "Fair, clear, even tone",
+                            body: "Model-like, slender (Height 175 cm, Weight 57 kg)",
+                            edu1: "Higher Education (In progress)",
+                            school1: "Kyiv National Aviation University",
+                            edu2: "Current Status",
+                            school2: "Student",
+                            sports: "Excellent ovarian reserve — AMH 6.2",
+                            vision: "100% / Excellent health",
+                            multiples: "No children. Has an older sister.",
+                            donor: "First-time donor",
+                            longevity: "Hereditary longevity. All family members are perfectly healthy.",
+                            character: "Goal-oriented, well-read, and empathetic. Actively involved in volunteering.",
+                            familyStory: "I grew up in a loving and supportive family. My parents always encouraged my desire for knowledge and self-development. I have an older sister with whom I am very close.",
+                            fatherInfo: "Office Worker",
+                            motherInfo: "Office Worker",
+                            hobbies: "History, volunteering, reading.",
+                            statement: "I want to give someone the chance to create a happy family, relying on my youth, energy, and strong genetics."
+                        }
+                    },
+                    uk: {
+                        back: "Каталог",
+                        agency: "Garnet International Agency",
+                        dossier: "Конфіденційне досьє кандидата",
+                        ageSuffix: "років",
+                        nationality: "Українка",
+                        stats: { height: "Зріст", weight: "Вага", blood: "Група крові", eyes: "Очі" },
+                        headers: { tech: "Технічний Профіль", appearance: "Антропометричні дані", education: "Освіта", genetics: "Генетична Карта", interview: "Особисті Якості" },
+                        fields: { eyes: "Очі", hair: "Волосся", skin: "Шкіра", body: "Статура", health: "Здоров’я", multiples: "Сім'я", status: "Статус", genHeredity: "Спадковість", father: "БАТЬКО", mother: "МАТИ", charHeader: "Характер", famHeader: "Історія Роду", lifeHeader: "Спосіб Життя", sportLabel: "Медичні дані" },
+                        verified: "Особу підтверджено",
+                        data: {
+                            eyeColorShort: "Сірі",
+                            eyes: "Світло-сірі, виразні",
+                            hair: "Мідно-русяве, довге та густе",
+                            skin: "Світла, чиста, рівний тон",
+                            body: "Модельна, струнка (зріст 175 см, вага 57 кг)",
+                            edu1: "Вища освіта (у процесі)",
+                            school1: "Київський національний авіаційний університет",
+                            edu2: "Поточна діяльність",
+                            school2: "Студентка",
+                            sports: "Відмінний оваріальний резерв — АМГ 6.2",
+                            vision: "100% / Відмінне здоров'я",
+                            multiples: "Власних дітей немає. Є старша сестра.",
+                            donor: "Первинне донорство",
+                            longevity: "Спадкове довголіття. Всі члени сім'ї абсолютно здорові.",
+                            character: "Цілеспрямована, ерудована та чуйна. Активно займається волонтерством.",
+                            familyStory: "Я виросла в люблячій сім'ї. Мої батьки завжди заохочували мій потяг до знань та саморозвитку. Маю старшу сестру, з якою ми дуже близькі.",
+                            fatherInfo: "Службовець",
+                            motherInfo: "Службовець",
+                            hobbies: "Історія, волонтерська діяльність, читання.",
+                            statement: "Я хочу подарувати комусь шанс на створення щасливої родини, спираючись на свою молодість та міцну генетику."
+                        }
+                    },
+                    cn: {
+                        back: "目錄",
+                        agency: "Garnet International Agency",
+                        dossier: "候选人绝密档案",
+                        ageSuffix: "岁",
+                        nationality: "乌克兰",
+                        stats: { height: "身高", weight: "体重", blood: "血型", eyes: "瞳色" },
+                        headers: { tech: "技术档案", appearance: "体征数据", education: "教育", genetics: "基因图谱", interview: "面试详情" },
+                        fields: { eyes: "瞳色", hair: "发色", skin: "皮肤", body: "体型", health: "健康", multiples: "家庭", status: "状态", genHeredity: "遗传基因", father: "父亲", mother: "母亲", charHeader: "性格", famHeader: "家族史", lifeHeader: "生活方式", sportLabel: "医疗数据" },
+                        verified: "身份验证通过",
+                        data: {
+                            eyeColorShort: "灰色",
+                            eyes: "浅灰色，清澈明亮",
+                            hair: "浅褐色/铜色，浓密长发",
+                            skin: "肤色白皙，纯净",
+                            body: "模特身材，苗条（身高 175 cm，体重 57 kg）",
+                            edu1: "高等教育 (在读)",
+                            school1: "基辅国立航空大学",
+                            edu2: "当前身份",
+                            school2: "学生",
+                            sports: "极佳的卵巢储备功能 — AMH 6.2",
+                            vision: "100% / 身体非常健康",
+                            multiples: "无子女。有一个姐姐。",
+                            donor: "首次捐赠",
+                            longevity: "家族成员普遍长寿且完全健康。",
+                            character: "目标明确、博学且富有同情心。积极参与志愿服务。",
+                            familyStory: "我成长在一个充满爱和支持的家庭。我的父母总是鼓励我对知识的渴望和自我发展。我有一个关系非常亲密的姐姐。",
+                            fatherInfo: "职员",
+                            motherInfo: "职员",
+                            hobbies: "历史、志愿服务、阅读。",
+                            statement: "我希望凭借我的青春、活力和优良的基因，为他人提供建立幸福家庭的机会。"
+                        }
+                    }
+                },
+                t() { return this.translations[this.lang] || this.translations['ru']; }
+            };
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .page-break { page-break-after: always; }
+        @media (min-width: 768px) { .page-container { aspect-ratio: 1 / 1.414; } }
+        [x-cloak] { display: none !important; }
+        @media print { .no-print { display: none !important; } body { background: white; } .shadow-2xl { box-shadow: none !important; } }
+        img { background-color: #e5e7eb; object-fit: cover; image-rendering: -webkit-optimize-contrast; }
+
+        /* Кнопка навигации */
+        .btn-nav {
+            @apply flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur border border-slate-200 shadow-lg rounded-full text-[10px] font-black uppercase transition-all hover:bg-slate-50 active:scale-95 text-slate-600 pointer-events-auto;
+        }
+    </style>
+</head>
+<body class="antialiased" x-data="dossierData()" x-cloak>
+
+    <!-- Navigation Fixed Panel -->
+    <div class="fixed top-4 left-4 right-4 z-50 flex justify-between items-center no-print sm:top-6 sm:left-6 sm:right-6 pointer-events-none">
+        <a href="index.html" class="btn-nav">
+            <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span x-text="t().back"></span>
+        </a>
+
+        <div class="flex gap-1 p-1 bg-white/90 backdrop-blur border border-slate-200 shadow-xl rounded-full pointer-events-auto">
+            <template x-for="l in ['ru', 'en', 'uk', 'cn']">
+                <button @click="lang = l" class="px-3 py-1.5 rounded-full text-[9px] font-black uppercase transition-all"
+                    :class="lang === l ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400 hover:text-blue-600'" x-text="l"></button>
+            </template>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto pt-24 pb-12 sm:pt-32 px-4 space-y-12 sm:space-y-20">
+
+        <!-- PAGE 1: VISUAL PASSPORT -->
+        <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] overflow-hidden flex flex-col p-6 sm:p-14 border border-slate-200 relative page-break">
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-6 sm:mb-12 border-b pb-6 sm:pb-10 border-slate-100">
+                <div class="mb-4 sm:mb-0">
+                    <div class="flex items-center gap-2 mb-2 sm:mb-3">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <p class="text-blue-600 font-black tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-[10px] uppercase leading-none" x-text="t().agency"></p>
+                    </div>
+                    <h1 class="text-4xl sm:text-7xl font-extralight tracking-tighter text-slate-900 leading-none">ID: 20082004</h1>
+                    <p class="text-slate-400 mt-2 sm:mt-4 uppercase tracking-[0.2em] sm:tracking-[0.4em] text-[8px] sm:text-[10px] font-bold" x-text="t().dossier"></p>
+                </div>
+                
+                <div class="flex-shrink-0 bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-100 min-w-[120px] sm:min-w-[160px] text-left sm:text-right">
+                    <p class="text-2xl sm:text-4xl font-light text-slate-800 whitespace-nowrap leading-tight">
+                        <span x-text="data.age"></span> <span x-text="t().ageSuffix"></span>
+                    </p>
+                    <p class="text-slate-400 text-[8px] sm:text-[10px] font-black uppercase tracking-widest mt-1" x-text="t().nationality"></p>
+                </div>
+            </div>
+
+            <!-- Photos Grid -->
+            <div class="flex flex-col sm:grid sm:grid-cols-12 gap-4 sm:gap-8 flex-grow mb-6 sm:mb-12">
+                <div class="sm:col-span-8 aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 relative">
+                    <img :src="getImg(photos.main)" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:col-span-4 flex flex-row sm:flex-col gap-4 sm:gap-8">
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
+                        <img :src="getImg(photos.full)" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
+                        <img :src="getImg(photos.athletic)" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 py-6 sm:py-10 border-t border-slate-100 text-center">
+                <template x-for="(label, key) in t().stats">
+                    <div class="bg-slate-50/50 sm:bg-transparent p-2 rounded-xl">
+                        <p class="text-[7px] sm:text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1 sm:mb-2" x-text="label"></p>
+                        <p class="text-sm sm:text-2xl font-light text-slate-800" x-text="key === 'height' ? '175 см' : (key === 'weight' ? '57 кг' : (key === 'blood' ? 'III (B) Rh+' : t().data.eyeColorShort))"></p>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- PAGE 2: TECHNICAL PROFILE -->
+        <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-16 flex flex-col border border-slate-200 page-break">
+            <h2 class="text-2xl sm:text-4xl font-extralight text-slate-800 mb-8 sm:mb-16 flex items-center gap-4 sm:gap-6">
+                <span class="w-10 h-10 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-xl font-bold shadow-xl rotate-3">02</span>
+                <span x-text="t().headers.tech"></span>
+            </h2>
+            <div class="space-y-8 sm:space-y-12 flex-grow">
+                <section>
+                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-blue-600 mb-4 sm:mb-6" x-text="t().headers.appearance"></h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-100 border border-slate-100 rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-sm">
+                        <template x-for="field in ['eyes', 'hair', 'skin', 'body']">
+                            <div class="flex sm:contents border-b sm:border-none border-slate-50 last:border-none">
+                                <div class="w-1/3 sm:w-auto bg-slate-50/50 p-4 sm:p-5 text-slate-400 text-[7px] sm:text-[9px] font-black uppercase flex items-center" x-text="t().fields[field]"></div>
+                                <div class="w-2/3 sm:w-auto bg-white p-4 sm:p-5 text-xs sm:text-sm font-medium leading-relaxed" x-text="t().data[field]"></div>
+                            </div>
+                        </template>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-blue-600 mb-4 sm:mb-6" x-text="t().headers.education"></h3>
+                    <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm">
+                        <div class="p-4 sm:p-6 bg-blue-50/40 rounded-2xl sm:rounded-3xl border border-blue-100">
+                            <p class="font-bold text-slate-800" x-text="t().data.edu1"></p>
+                            <p class="text-[10px] sm:text-xs text-slate-500 mt-1" x-text="t().data.school1"></p>
+                        </div>
+                        <div class="p-4 sm:p-6 bg-slate-50 rounded-2xl sm:rounded-3xl border border-slate-100">
+                            <p class="font-bold text-slate-800" x-text="t().data.edu2"></p>
+                            <p class="text-[10px] sm:text-xs text-slate-500 mt-1" x-text="t().data.school2"></p>
+                        </div>
+                        <div class="p-4 sm:p-6 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm">
+                            <p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase mb-1" x-text="t().fields.sportLabel"></p>
+                            <p class="font-bold text-slate-800" x-text="t().data.sports"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-blue-600 mb-4 sm:mb-6 flex items-center gap-3">
+                        <span x-text="t().headers.genetics"></span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="p-4 sm:p-6 border border-slate-100 rounded-2xl sm:rounded-3xl bg-white shadow-sm text-center">
+                            <p class="uppercase font-black text-slate-300 mb-1 sm:mb-3 tracking-widest text-[7px] sm:text-[10px]" x-text="t().fields.health"></p>
+                            <p class="font-bold leading-tight text-[10px] sm:text-base" x-text="t().data.vision"></p>
+                        </div>
+                        <div class="p-4 sm:p-6 border border-slate-100 rounded-2xl sm:rounded-3xl bg-white shadow-sm text-center">
+                            <p class="uppercase font-black text-slate-300 mb-1 sm:mb-3 tracking-widest text-[7px] sm:text-[10px]" x-text="t().fields.multiples"></p>
+                            <p class="font-bold leading-tight text-[10px] sm:text-base" x-text="t().data.multiples"></p>
+                        </div>
+                        <div class="p-4 sm:p-6 border border-slate-100 rounded-2xl sm:rounded-3xl bg-white shadow-sm text-center">
+                            <p class="uppercase font-black text-slate-300 mb-1 sm:mb-3 tracking-widest text-[7px] sm:text-[10px]" x-text="t().fields.status"></p>
+                            <p class="font-bold leading-tight text-[10px] sm:text-base" x-text="t().data.donor"></p>
+                        </div>
+                        <div class="sm:col-span-3 p-6 sm:p-8 bg-slate-900 text-white rounded-2xl sm:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+                            <p class="text-[7px] sm:text-[9px] uppercase font-black text-slate-500 mb-2 sm:mb-4 tracking-[0.2em] sm:tracking-[0.4em]" x-text="t().fields.genHeredity"></p>
+                            <p class="text-xs sm:text-sm font-light leading-relaxed italic opacity-90" x-text="t().data.longevity"></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- PAGE 3: PERSONALITY -->
+        <div class="page-container bg-white shadow-2xl rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-16 flex flex-col border border-slate-200 relative overflow-hidden page-break">
+            <div class="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-blue-600/5 rounded-bl-[100px] sm:rounded-bl-[200px] -mr-12 -mt-12 sm:-mr-24 sm:-mt-24"></div>
+            
+            <h2 class="text-2xl sm:text-4xl font-extralight text-slate-800 mb-8 sm:mb-16 flex items-center gap-4 sm:gap-6">
+                <svg class="w-6 h-6 sm:w-10 sm:h-10 text-rose-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                <span x-text="t().headers.interview"></span>
+            </h2>
+
+            <div class="flex-grow space-y-8 sm:space-y-14 z-10 relative text-lg leading-relaxed">
+                <div class="group">
+                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.charHeader"></h4>
+                    <p class="text-slate-800 text-xs sm:text-lg leading-relaxed pl-4 sm:pl-8 border-l-4 border-blue-600 font-light italic" x-text="t().data.character"></p>
+                </div>
+                <div class="group">
+                    <h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.famHeader"></h4>
+                    <div class="bg-slate-50 p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-inner">
+                        <p class="text-slate-600 text-xs sm:text-base leading-relaxed italic font-light mb-4 sm:mb-8" x-text="'&quot;' + t().data.familyStory + '&quot;'"></p>
+                        <div class="pt-4 sm:pt-8 border-t border-slate-200 grid grid-cols-2 gap-4 sm:gap-10">
+                            <div><p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.father"></p><p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.fatherInfo"></p></div>
+                            <div><p class="text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest" x-text="t().fields.mother"></p><p class="text-[10px] sm:text-xs font-bold text-slate-800" x-text="t().data.motherInfo"></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:grid sm:grid-cols-12 gap-8 items-end">
+                    <div class="sm:col-span-7 space-y-6 sm:space-y-12 w-full">
+                        <div><h4 class="text-[8px] sm:text-[10px] font-black text-blue-600 uppercase tracking-widest mb-3" x-text="t().fields.lifeHeader"></h4><p class="text-slate-600 text-xs sm:text-base font-light leading-relaxed" x-text="t().data.hobbies"></p></div>
+                        <div class="p-6 sm:p-10 bg-blue-600 text-white rounded-[2.5rem] shadow-2xl shadow-blue-100 transform sm:-rotate-1 w-full text-center">
+                            <h4 class="text-[8px] sm:text-[10px] font-black text-blue-200 uppercase mb-3 italic tracking-[0.2em] sm:tracking-[0.4em]">Official Statement</h4>
+                            <p class="text-xs sm:text-base font-light italic leading-relaxed" x-text="'«' + t().data.statement + '»'"></p>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-5 w-full aspect-[4/5] bg-white rounded-[2rem] sm:rounded-[3rem] border-2 border-dashed border-slate-200 overflow-hidden shadow-2xl sm:rotate-2 hover:rotate-0 transition-all duration-1000 cursor-zoom-in">
+                        <img :src="getImg(photos.lifestyle)" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 sm:mt-auto pt-6 sm:pt-14 flex flex-row justify-between items-center border-t border-slate-100 text-[7px] sm:text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] sm:tracking-[0.6em]">
+                <span>Dossier Ver. 3.5 / 2026</span>
+                <div class="flex items-center gap-1 sm:gap-3"><span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(34,197,94,0.8)]"></span><span x-text="t().verified"></span></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
