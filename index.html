@@ -22,7 +22,7 @@
                     height: 'all'
                 },
 
-                // База данных всех кандидатов
+                // База данных всех кандидатов (теперь 8 человек)
                 candidates: [
                     { id: '26122001', age: 24, height: 181, weight: 58, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'green', hair: 'brown', link: 'ID26122001.html', photo: 'photos/ID26122001/8.jpg' },
                     { id: '25071999', age: 26, height: 169, weight: 52, blood: 'IV', bloodFull: 'IV (AB) Rh+', eyes: 'hazel', hair: 'light_brown', link: 'ID25071999.html', photo: 'photos/ID25071999/9.jpg' },
@@ -30,10 +30,11 @@
                     { id: '24012001', age: 25, height: 170, weight: 50, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'hazel', hair: 'light_brown', link: 'ID24012001.html', photo: 'photos/ID24012001/6.jpg' },
                     { id: '07011996', age: 27, height: 168, weight: 49, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'brown', hair: 'brown', link: 'ID07011996.html', photo: 'photos/ID07011996/16.jpg' },
                     { id: '20082004', age: new Date().getFullYear() - 2004, height: 175, weight: 57, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'gray', hair: 'light_brown', link: 'ID20082004.html', photo: 'photos/ID20082004/1.jpg' },
-                    { id: '23062001', age: new Date().getFullYear() - 2001, height: 175, weight: 55, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'golden_brown', hair: 'brown', link: 'ID23062001.html', photo: 'photos/ID23062001/1.jpg' }
+                    { id: '23062001', age: new Date().getFullYear() - 2001, height: 175, weight: 55, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'golden_brown', hair: 'brown', link: 'ID23062001.html', photo: 'photos/ID23062001/1.jpg' },
+                    { id: '08051998', age: new Date().getFullYear() - 1998, height: 168, weight: 54, blood: 'IV', bloodFull: 'IV (AB)', eyes: 'brown', hair: 'light_brown', link: 'ID08051998.html', photo: 'photos/ID08051998/1.jpg' }
                 ],
 
-                // Логика фильтрации
+                // Логика работы фильтров
                 get filteredCandidates() {
                     return this.candidates.filter(c => {
                         if (this.filters.blood !== 'all' && c.blood !== this.filters.blood) return false;
@@ -61,7 +62,6 @@
                         activeHeader: "Активные Анкеты",
                         subHeader: "Выберите кандидата для просмотра или воспользуйтесь фильтром",
                         nationality: "Украинка",
-                        ageSuffix: "лет",
                         stats: { height: "Рост", blood: "Группа крови", eyes: "Глаза", hair: "Волосы" },
                         viewBtn: "Просмотреть досье",
                         statusActive: "Активна",
@@ -80,7 +80,6 @@
                         activeHeader: "Активні Анкети",
                         subHeader: "Оберіть кандидата для перегляду або скористайтеся фільтром",
                         nationality: "Українка",
-                        ageSuffix: "років",
                         stats: { height: "Зріст", blood: "Група крові", eyes: "Очі", hair: "Волосся" },
                         viewBtn: "Переглянути досьє",
                         statusActive: "Активна",
@@ -99,7 +98,6 @@
                         activeHeader: "Active Dossiers",
                         subHeader: "Select a candidate to view or use the filters below",
                         nationality: "Ukrainian",
-                        ageSuffix: "y.o.",
                         stats: { height: "Height", blood: "Blood Type", eyes: "Eyes", hair: "Hair" },
                         viewBtn: "View dossier",
                         statusActive: "Active",
@@ -118,7 +116,6 @@
                         activeHeader: "进行中的档案",
                         subHeader: "选择候选人以查看完整的机密档案或使用筛选器",
                         nationality: "乌克兰",
-                        ageSuffix: "岁",
                         stats: { height: "身高", blood: "血型", eyes: "瞳色", hair: "发色" },
                         viewBtn: "查看详细档案",
                         statusActive: "活动中",
@@ -132,7 +129,21 @@
                         }
                     }
                 },
-                t() { return this.translations[this.lang]; }
+                t() { return this.translations[this.lang]; },
+                
+                // Склонение слова "год/лет" в зависимости от возраста
+                getAgeSuffix(age) {
+                    if (this.lang === 'en') return 'y.o.';
+                    if (this.lang === 'cn') return '岁';
+                    if (this.lang === 'uk') return 'років';
+                    // Для русского
+                    let count = age % 100;
+                    if (count >= 10 && count <= 20) return 'лет';
+                    let lastDigit = count % 10;
+                    if (lastDigit === 1) return 'год';
+                    if (lastDigit >= 2 && lastDigit <= 4) return 'года';
+                    return 'лет';
+                }
             }
         }
     </script>
@@ -158,7 +169,7 @@
 </head>
 <body class="antialiased text-slate-800" x-data="catalogData()" x-cloak>
 
-    <!-- Header (Шапка) -->
+    <!-- Шапка -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50 backdrop-blur-md bg-white/80">
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
@@ -171,7 +182,7 @@
                 </div>
             </div>
 
-            <!-- Language Switcher -->
+            <!-- Переключатель языков -->
             <div class="flex gap-1 p-1 bg-slate-100 rounded-full border border-slate-200">
                 <template x-for="l in ['ru', 'uk', 'en', 'cn']">
                     <button @click="lang = l" 
@@ -251,7 +262,7 @@
         </div>
         <!-- ================= КОНЕЦ БЛОКА ФИЛЬТРОВ ================= -->
 
-        <!-- Динамическая сетка кандидатов -->
+        <!-- Динамическая сетка кандидатов (Автоматически выводит 8 карточек) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <template x-for="c in filteredCandidates" :key="c.id">
                 <a :href="c.link" class="card-hover group block">
@@ -264,11 +275,11 @@
                             <div class="mb-6">
                                 <h3 class="text-2xl font-black text-slate-900 tracking-tighter leading-none mb-1 uppercase" x-text="'ID: ' + c.id"></h3>
                                 <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">
-                                    <span x-text="t().nationality"></span>, <span x-text="c.age"></span> <span x-text="lang === 'en' ? 'y.o.' : (lang === 'cn' ? '岁' : (lang === 'uk' ? 'років' : 'лет'))"></span>
+                                    <span x-text="t().nationality"></span>, <span x-text="c.age"></span> <span x-text="getAgeSuffix(c.age)"></span>
                                 </p>
                             </div>
                             
-                            <!-- Характеристики (Данные подтягиваются из объекта candidates) -->
+                            <!-- Характеристики -->
                             <div class="space-y-3 mb-6">
                                 <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
                                     <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
