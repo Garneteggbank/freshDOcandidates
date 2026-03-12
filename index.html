@@ -26,10 +26,11 @@
                 candidates: [
                     { id: '26122001', age: 24, height: 181, weight: 58, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'green', hair: 'brown', link: 'ID26122001.html', photo: 'photos/ID26122001/8.jpg' },
                     { id: '25071999', age: 26, height: 169, weight: 52, blood: 'IV', bloodFull: 'IV (AB) Rh+', eyes: 'hazel', hair: 'light_brown', link: 'ID25071999.html', photo: 'photos/ID25071999/9.jpg' },
-                    { id: '31031999', age: 27, height: 170, weight: 52, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'gray_green', hair: 'blonde', link: 'ID31031999.html', photo: 'photos/ID31031999/8.jpg' },
+                    { id: '31031999', age: 27, height: 170, weight: 52, blood: 'I', bloodFull: 'I (A) Rh+', eyes: 'gray_green', hair: 'blonde', link: 'ID31031999.html', photo: 'photos/ID31031999/8.jpg' },
                     { id: '24012001', age: 25, height: 170, weight: 50, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'hazel', hair: 'light_brown', link: 'ID24012001.html', photo: 'photos/ID24012001/6.jpg' },
                     { id: '07011996', age: 27, height: 168, weight: 49, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'brown', hair: 'brown', link: 'ID07011996.html', photo: 'photos/ID07011996/16.jpg' },
-                    { id: '20082004', age: 19, height: 175, weight: 57, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'gray', hair: 'light_brown', link: 'ID20082004.html', photo: 'photos/ID20082004/1.jpg' }
+                    { id: '20082004', age: new Date().getFullYear() - 2004, height: 175, weight: 57, blood: 'III', bloodFull: 'III (B) Rh+', eyes: 'gray', hair: 'light_brown', link: 'ID20082004.html', photo: 'photos/ID20082004/1.jpg' },
+                    { id: '23062001', age: new Date().getFullYear() - 2001, height: 175, weight: 55, blood: 'I', bloodFull: 'I (O) Rh+', eyes: 'golden_brown', hair: 'brown', link: 'ID23062001.html', photo: 'photos/ID23062001/1.jpg' }
                 ],
 
                 // Логика фильтрации
@@ -67,8 +68,8 @@
                         emptyState: "Кандидаты по выбранным параметрам не найдены.",
                         filterLabels: { blood: "Группа крови", eyes: "Цвет глаз", hair: "Цвет волос", height: "Рост", all: "Все", reset: "Сбросить фильтр" },
                         options: {
-                            eyes: { green: "Зеленые", hazel: "Каре-зеленые", gray_green: "Серо-зеленые", brown: "Карие", gray: "Серые" },
-                            hair: { brown: "Коричневые (шатен)", light_brown: "Русые", blonde: "Блонд" },
+                            eyes: { green: "Зеленые", hazel: "Каре-зеленые", gray_green: "Серо-зеленые", brown: "Карие", gray: "Серые", golden_brown: "Золотисто-карие" },
+                            hair: { brown: "Шатен / Коричневые", light_brown: "Русые", blonde: "Блонд" },
                             height: { short: "До 170 см", medium: "170 - 174 см", tall: "От 175 см" },
                             blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
                         }
@@ -86,8 +87,8 @@
                         emptyState: "Кандидатів за вибраними параметрами не знайдено.",
                         filterLabels: { blood: "Група крові", eyes: "Колір очей", hair: "Колір волосся", height: "Зріст", all: "Всі", reset: "Скинути фільтр" },
                         options: {
-                            eyes: { green: "Зелені", hazel: "Каро-зелені", gray_green: "Сіро-зелені", brown: "Карі", gray: "Сірі" },
-                            hair: { brown: "Коричневе", light_brown: "Русяве", blonde: "Блонд" },
+                            eyes: { green: "Зелені", hazel: "Каро-зелені", gray_green: "Сіро-зелені", brown: "Карі", gray: "Сірі", golden_brown: "Золотисто-карі" },
+                            hair: { brown: "Шатен / Коричневе", light_brown: "Русяве", blonde: "Блонд" },
                             height: { short: "До 170 см", medium: "170 - 174 см", tall: "Від 175 см" },
                             blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
                         }
@@ -105,7 +106,7 @@
                         emptyState: "No candidates found matching your criteria.",
                         filterLabels: { blood: "Blood Type", eyes: "Eye Color", hair: "Hair Color", height: "Height", all: "All", reset: "Reset Filters" },
                         options: {
-                            eyes: { green: "Green", hazel: "Hazel", gray_green: "Gray-green", brown: "Brown", gray: "Gray" },
+                            eyes: { green: "Green", hazel: "Hazel", gray_green: "Gray-green", brown: "Brown", gray: "Gray", golden_brown: "Golden-brown" },
                             hair: { brown: "Brown", light_brown: "Light Brown", blonde: "Blonde" },
                             height: { short: "Under 170 cm", medium: "170 - 174 cm", tall: "175 cm and above" },
                             blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
@@ -124,7 +125,7 @@
                         emptyState: "未找到符合所选条件的候选人。",
                         filterLabels: { blood: "血型", eyes: "瞳色", hair: "发色", height: "身高", all: "全部", reset: "重置筛选" },
                         options: {
-                            eyes: { green: "绿色", hazel: "棕绿色", gray_green: "灰绿色", brown: "棕色", gray: "灰色" },
+                            eyes: { green: "绿色", hazel: "棕绿色", gray_green: "灰绿色", brown: "棕色", gray: "灰色", golden_brown: "金棕色" },
                             hair: { brown: "棕色", light_brown: "浅棕色", blonde: "金发" },
                             height: { short: "170 cm 以下", medium: "170 - 174 cm", tall: "175 cm 及以上" },
                             blood: { 'I': "I (O)", 'II': "II (A)", 'III': "III (B)", 'IV': "IV (AB)" }
@@ -141,7 +142,7 @@
         .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); }
         .card-hover:hover { transform: translateY(-8px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         
-        /* Стили для селектов */
+        /* Стили для выпадающих списков фильтра */
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -150,8 +151,9 @@
             background-position-x: 95%;
             background-position-y: 50%;
         }
-
+        
         [x-cloak] { display: none !important; }
+        img { background-color: #e5e7eb; object-fit: cover; }
     </style>
 </head>
 <body class="antialiased text-slate-800" x-data="catalogData()" x-cloak>
@@ -266,7 +268,7 @@
                                 </p>
                             </div>
                             
-                            <!-- Характеристики -->
+                            <!-- Характеристики (Данные подтягиваются из объекта candidates) -->
                             <div class="space-y-3 mb-6">
                                 <div class="flex justify-between border-b border-slate-50 pb-2 text-[11px]">
                                     <span class="text-slate-400 font-bold uppercase tracking-wider" x-text="t().stats.height"></span>
@@ -296,7 +298,7 @@
             </template>
         </div>
 
-        <!-- Если ничего не найдено -->
+        <!-- Сообщение, если фильтр ничего не нашел -->
         <div x-show="filteredCandidates.length === 0" class="text-center py-20 bg-white rounded-[2rem] border border-slate-200 border-dashed" x-cloak>
             <p class="text-slate-400 font-bold text-lg" x-text="t().emptyState"></p>
             <button @click="resetFilters()" class="mt-4 px-6 py-2 bg-blue-50 text-blue-600 text-xs font-black uppercase tracking-widest rounded-xl hover:bg-blue-100 transition-colors">
@@ -306,6 +308,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-slate-200 mt-10 flex flex-col md:flex-row justify-between items-center gap-6">
         <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">© 2026 Garnet International Agency</p>
         <div class="flex gap-8">
